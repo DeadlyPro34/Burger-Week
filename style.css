@@ -8,7 +8,7 @@
 }
 
                         /* Header Part */
-header{
+.header{
     min-height: 100vh;
     width: 100%;
     background-image: url('Image/Ma1.png');
@@ -41,6 +41,24 @@ header{
     font-size: 15px;
 }
 
+.nav-link ul li::after{
+    margin: auto;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(64, 64, 168);
+    display: flex;
+    content: ' ';
+    transition: .5s;
+}
+
+.nav-link ul li:hover::after{
+    width: 100%;
+}
+
+nav .ri{
+    display: none;
+}
+
 .Delivery{
     color: rgb(105, 73, 31);
     height: 20px;
@@ -51,40 +69,140 @@ header{
     background-attachment: scroll;
 }
 
+.head-content{
+    display: grid;
+    gap: 2rem;
+    overflow: hidden;
+}
+
+.head-bur{
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+.head-co h2{
+    max-width: 400px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+    padding: 2px 10px;
+    font-size: 20px;
+    font-weight: 400;
+    color: burlywood;
+    border: 1px dashed black;
+} 
+
+.head-co h1{
+    font-size: 70px;
+    font-weight: 500;
+    color: burlywood;
+    line-height: 3.5rem;
+    text-align: center;
+    text-shadow: 2px 2px bisque;
+}
+
+.head-co h1 span{
+    font-size: 35px;
+    font-weight: 800;
+}
+@media screen and (max-width: 1150px){
+    .nav-link{
+        position: fixed;
+        background: transparent;
+        backdrop-filter: blur(10px);
+        height: 100vh;
+        width:200px;
+        top: 0;
+        right: -200px;
+        z-index: 2;
+        transition: right 1s;
+        text-align: left;
+    }
+    .nav-link ul li{
+        display: block;
+    }
+
+    nav .ri{
+        display: block;
+        color: black;
+        margin: 10px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+    .nav-link ul{
+        padding: 10px;
+    }
+    /* .head-content{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .head-bur{
+        grid-area: 1/2/2/1;
+    } */
+    .head-co h2{
+        margin-top: unset;
+    }
+    .head-co h1{
+        text-align: top;
+    }
+}
+
                         /* Footer Part */
 
-footer{
+.footer{
     background-image: url('Image/cta.png');
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
     color: aliceblue;
 }
 
 .img{
-    width: 250px;
-    margin: 50px 0px 0px 50px;
+    max-width: 250px;
+}
+
+.foot-ye{
+    margin-top: 2rem;
+    display: grid;
+    gap: 2rem;
 }
 
 .foot-ye p{
-    margin: 0px 999px 0px 50px;
-    justify-content: start;
+    font-weight: 500;
+    line-height: 1.75rem;
 }
 
 .foot-yo{
+    display: grid;
     margin: -54px 85px;
     position: absolute;
     right: 0%;
 }
+
+.foot-yo li{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 500;
+}
 .foot-yo ri{
     display: inline-block;
 }
-.foot-cpy p{
-    position: relative;
-    bottom: -17px;
+.foot-cpy{
+    padding: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
 }
-.foot-icons li{
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
+.foot-icons{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.foot-icons a{
+    font-size: 1.5rem;
+    
+}
+
+.foot-icons a:hover{
+    color: rebeccapurple;
 }
