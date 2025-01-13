@@ -131,20 +131,44 @@ nav .ri{
     .nav-link ul{
         padding: 10px;
     }
-    /* .head-content{
+    .head-content{
         grid-template-columns: repeat(2,1fr);
     }
     .head-bur{
-        grid-area: 1/2/2/1;
-    } */
+        grid-area: 1/2/2/3;
+    }
     .head-co h2{
-        margin-top: unset;
+        margin-inline-start: inherit;
+        position: relative;
+        top: 14rem;
     }
     .head-co h1{
-        text-align: top;
+        text-align: left;
+        position: relative;
+        top:13rem
     }
 }
 
+@media screen and (max-width: 768px){
+    .head-content{ display: grid;
+        gap: 2rem;
+        overflow: hidden;
+        grid-template-columns: repeat(2,1fr);
+    }
+    /* .head-bur{
+        grid-area: 1/2/2/3;
+    } */
+    .head-co h2{
+        margin-inline-start: inherit;
+        position: relative;
+        top: 14rem;
+    }
+    .head-co h1{
+        text-align: left;
+        position: relative;
+        top:13rem
+    }
+}
                         /* Footer Part */
 
 .footer{
