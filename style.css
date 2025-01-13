@@ -137,16 +137,17 @@ nav .ri{
     }
     .head-content{
         display: flex;
-        grid-template-columns: repeat(0, 1fr);
+        flex-direction: column;
         align-items: center;
     }
      
     .head-bur img{
-        flex-direction: column;
+        margin: 0;
     }
     
     .head-co h2{
         display: flex;
+        justify-content: center;
         inset-block-start: unset;
     }
 
