@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&family=Playwrite+VN:wght@100..400&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
 }
 
-                        /* Header Part */
-.header{
+/* Header Part */
+.header {
     min-height: 100vh;
     width: 100%;
     background-image: url('Image/Ma1.png');
@@ -17,7 +17,7 @@
     position: relative;
 }
 
-.nav-bar{
+.nav-bar {
     display: flex;
     padding: 1px 6px;
     justify-content: space-between;
@@ -25,23 +25,23 @@
     text-align: right;
 }
 
-.nav-bar img{
+.nav-bar img {
     width: 200px;
 }
 
-.nav-link ul li{
+.nav-link ul li {
     display: inline-block;
     padding: 8px 12px;
     position: relative;
 }
 
-.nav-link a{
+.nav-link a {
     color: rgb(105, 73, 31);
     text-decoration: none;
     font-size: 15px;
 }
 
-.nav-link ul li::after{
+.nav-link ul li::after {
     margin: auto;
     width: 0%;
     height: 2px;
@@ -51,15 +51,15 @@
     transition: .5s;
 }
 
-.nav-link ul li:hover::after{
+.nav-link ul li:hover::after {
     width: 100%;
 }
 
-nav .ri{
+nav .ri {
     display: none;
 }
 
-.Delivery{
+.Delivery {
     color: rgb(105, 73, 31);
     height: 20px;
     background-image: url('Image/delivery.png');
@@ -69,7 +69,7 @@ nav .ri{
     background-attachment: scroll;
 }
 
-.head-content{
+.head-content {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -80,21 +80,21 @@ nav .ri{
     padding: 0 2rem;
 }
 
-.head-bur img{
+.head-bur img {
     width: 100%;
     height: auto;
     object-fit: cover;
 }
 
-.head-co h2{
+.head-co h2 {
     max-width: 400px;
     font-weight: 500;
     text-align: left;
     color: rgb(146, 100, 39);
     border: 1px dashed rgb(234, 102, 102);
-} 
+}
 
-.head-co h1{
+.head-co h1 {
     font-size: 5rem;
     font-weight: 800;
     line-height: 5rem;
@@ -104,60 +104,129 @@ nav .ri{
     color: #cf8310;
 }
 
-.head-co h1 span{
+.head-co h1 span {
     font-size: 4rem;
     color: #cf8310;
 }
-@media screen and (max-width: 768px){
-    .nav-link{
+
+@media screen and (max-width: 768px) {
+    .nav-link {
         position: fixed;
         background: transparent;
         backdrop-filter: blur(10px);
         height: 100vh;
-        width:200px;
+        width: 200px;
         top: 0;
         right: -200px;
         z-index: 2;
         transition: right 1s;
         text-align: left;
     }
-    .nav-link ul li{
+
+    .nav-link ul li {
         display: block;
     }
 
-    nav .ri{
+    nav .ri {
         display: block;
         color: black;
         margin: 10px;
         font-size: 25px;
         cursor: pointer;
     }
-    .nav-link ul{
+
+    .nav-link ul {
         padding: 10px;
     }
-    .head-content{
+
+    .head-content {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-     
-    .head-bur img{
+
+    .head-bur img {
         margin: 0;
     }
-    
-    .head-co h2{
+
+    .head-co h2 {
         display: flex;
         justify-content: center;
         inset-block-start: unset;
     }
 
-    .head-co h1{
+    .head-co h1 {
         text-align: center;
     }
 }
-                        /* Footer Part */
 
-.footer{
+                            /* Menu Part */
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.menu-sum p {
+    text-align: center;
+    padding: 50px;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 32px;
+    margin: 5px 20px;
+    padding: 10px;
+    color: bisque;
+}
+
+.menu-order .menu-items {
+    color: white;
+    width: 250px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    backdrop-filter: blur(30px);
+    background: rgba(225, 225, 225, 0.5);
+    border: 1px solid rgba(225, 225, 225, 0.5);
+}
+
+.menu-order .menu-items img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10%;
+    margin-bottom: 10px;
+    padding: 30px;
+}
+
+.menu-order .menu-items h2 {
+    font-size: 25px;
+    color: black;
+    text-align: center;
+    font-weight: 500;
+    margin: 14px 0 40px;
+}
+
+.menu-order .menu-items .menu-button{
+    font-size: 20px;
+    padding: 10px 35px;
+    color: blueviolet;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    background: whitesmoke;
+    border: 1px solid rebeccapurple;
+}
+
+/* Footer Part */
+
+.footer {
     background-image: url('Image/cta.png');
     background-position: center center;
     background-repeat: no-repeat;
@@ -165,55 +234,58 @@ nav .ri{
     color: aliceblue;
 }
 
-.img{
+.img {
     max-width: 250px;
 }
 
-.foot-ye{
+.foot-ye {
     margin-top: 2rem;
     display: grid;
     gap: 2rem;
 }
 
-.foot-ye p{
+.foot-ye p {
     max-width: 250px;
     font-weight: 500;
     line-height: 1.75rem;
 }
 
-.foot-yo{
+.foot-yo {
     display: grid;
     margin: -54px 85px;
     position: absolute;
     right: 0%;
 }
 
-.foot-yo li{
+.foot-yo li {
     display: flex;
     align-items: center;
     gap: 1rem;
     font-weight: 500;
 }
-.foot-yo ri{
+
+.foot-yo ri {
     display: inline-block;
 }
-.foot-cpy{
+
+.foot-cpy {
     padding: 1rem;
     font-size: 0.9rem;
     text-align: center;
 }
-.foot-icons{
+
+.foot-icons {
     margin-top: 2rem;
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-.foot-icons a{
+.foot-icons a {
     font-size: 1.5rem;
-    
+
 }
 
-.foot-icons a:hover{
+.foot-icons a:hover {
     color: rebeccapurple;
 }
