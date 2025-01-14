@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <title>Burger Week</title>
 </head>
 
@@ -48,45 +49,48 @@
         <div class="menu-sum">
             <p>Hi! Here you can select the burger, coffee, & fries you like to have. Enjoy your meal!</p>
         </div>
-        <div class="menu-container">
-            <div>
-                <div class="menu-order">
-                    <div class="menu-items">
+        <div class="menu-container swiper">
+            <div class="swiper-slider">
+                <div class="menu-order swiper-wrapper">
+                    <div class="menu-items swiper-slide">
                         <img src="Image/Classic Coffee Regular with Cinammon Spice.png" class="menu-img">
                         <h2>Classic Coffee Regular</h2>
                         <button class="menu-button">Order Now</button>
-                    </div> 
-                    <div class="menu-items">
+                    </div>
+                    <div class="menu-items swiper-slide">
                         <img src="Image/Fries (Large).png" class="menu-img">
                         <h2>Fries Large</h2>
                         <button class="menu-button">Order Now</button>
-                    </div> 
-                    <div class="menu-items">
+                    </div>
+                    <div class="menu-items swiper-slide">
                         <img src="Image/Iced Coffee with Cinammon Spice.png" class="menu-img">
-                        <h2>Iced Coffee with Cinammon Spice</h2>
+                        <h2>Iced Coffee</h2>
                         <button class="menu-button">Order Now</button>
-                    </div> 
-                    <div class="menu-items">
+                    </div>
+                    <div class="menu-items swiper-slide">
                         <img src="Image/Veg Pizza McPuff.png" class="menu-img">
                         <h2>Veg. Pizza Puff</h2>
                         <button class="menu-button">Order Now</button>
-                    </div> 
-                    <div class="menu-items">
+                    </div>
+                    <div class="menu-items swiper-slide">
                         <img src="Image/Crispy veggie burger.png" class="menu-img">
                         <h2>Crispy Veggie Burger</h2>
                         <button class="menu-button">Order Now</button>
-                    </div> 
-                    <div class="menu-items">
+                    </div>
+                    <div class="menu-items swiper-slide">
                         <img src="Image/BG1.png" class="menu-img">
                         <h2>Double Patty Veg. Burger</h2>
                         <button class="menu-button">Order Now</button>
-                    </div> 
-                    <div class="menu-items">
+                    </div>
+                    <div class="menu-items swiper-slide">
                         <img src="Image/BG2.png" class="menu-img">
                         <h2>Veg. Aloo Tikkie Burger</h2>
                         <button class="menu-button">Order Now</button>
-                    </div> 
+                    </div>
                 </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-slide-button swiper-button-prev"></div>
+                <div class="swiper-slide-button swiper-button-next"></div>
             </div>
         </div>
     </section>
@@ -116,6 +120,9 @@
             <p>© Copyright Owner Burger House Since 2025</p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+    </script>
 
     <script src="script.js"></script>
 </body>
