@@ -283,7 +283,7 @@ h1 {
 
 .cta-content h2{
     font-weight: 500;
-    color: black;
+    color:  rgb(252, 134, 134);
 }
 
 .cta-content form{
@@ -391,6 +391,9 @@ h1 {
 }
 
 @media (min-width: 540px) {
+    .container{
+        min-width: 540px;
+    }
     .banner-container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -480,6 +483,7 @@ h1 {
         max-width: 1550px;
     }
 
+    /* header media query of 1550px */
     .nav-bar img {
         width: 350px;
     }
@@ -542,9 +546,17 @@ h1 {
         margin: 50px 100px 50px 100px;
     }
 
-    /* about section media query */
+    /* about section media query of 1550px*/
     .about-content p {
         font-size: 30px;
+    }
+
+    .about-banner {
+        margin: 17px 5px;
+        padding: 1rem;
+        width: auto;
+        height: 200px;
+        border-radius: 2rem;
     }
 
     .about-banner p {
@@ -553,5 +565,30 @@ h1 {
     
     .about-banner h4 {
         font-size:60px;
+    }
+
+    /* cta media query for 1550px */
+    .cta-content h2{
+        font-size: 30px;
+    }
+    
+    .cta-content input{
+        margin:10px;
+        height: 30px;
+        font-size: 20px;
+    }
+    
+    .cta-btn button{
+        font-size: 25px;
+    }
+
+    /* footer media query for 1550px */
+    .foot-ye p {
+        font-size: 25px;
+        max-width: 350px;
+    }
+    
+    .foot-yo li {
+        font-size: 20px;
     }
 }
