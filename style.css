@@ -7,9 +7,9 @@
     list-style: none;
 }
 
-/* section{
-    height: 500px;
-} */
+section{
+    background-image: url('Image/Ma3.png');
+} 
 /* Header Part */
 .header {
     min-height: 100vh;
@@ -91,25 +91,25 @@ nav .ri {
 }
 
 .head-co h2 {
+    font-size: 20px;
     max-width: 400px;
     font-weight: 500;
     text-align: left;
     color: rgb(146, 100, 39);
-    border: 1px dashed rgb(234, 102, 102);
+    border: 1px dashed rgb(0, 0, 0);
 }
 
 .head-co h1 {
-    font-size: 5rem;
+    font-size: 70px;
     font-weight: 800;
     line-height: 5rem;
     text-align: left;
-    margin: -9px 0;
     text-shadow: 2px 2px white;
     color: rgb(146, 100, 39);
 }
 
 .head-co h1 span {
-    font-size: 4rem;
+    font-size: 60px;
     color: rgb(146, 100, 39);
 }
 
@@ -173,7 +173,7 @@ nav .ri {
 }
 
 h1 {
-    color: black;
+    color: rgb(252, 134, 134);
     text-align: center;
 }
 
@@ -339,7 +339,6 @@ h1 {
 
 /* Cta */
 .cta-container{
-    margin: 10px auto;
     width: 100%;
     height: fit-content;
     border-radius: 10px;
@@ -373,9 +372,9 @@ h1 {
 .cta-btn button{
     text-decoration: none;
     display: inline-block;
-    color: gray;
+    color: rgb(255, 255, 255);
     font-size: 20px;
-    border: 2px solid rgba(125, 4, 4, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     padding: 2px 20px;
     border-radius: 50px;
     margin-top: 20px;
