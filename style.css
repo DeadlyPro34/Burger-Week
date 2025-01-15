@@ -6,13 +6,16 @@
     box-sizing: border-box;
     list-style: none;
 }
-
+html{
+    scroll-behavior: smooth;
+    scroll-padding: -25rem;
+}
 section{
     background-image: url('Image/Ma3.png');
 } 
 
 .reveal{
-    transform: translateY(150px);
+    transform: translateY(200px);
     opacity: 1;
     transition: all 1s ease;
 }
@@ -20,7 +23,6 @@ section{
 .reveal.active{
     transform: translateY(0px);
     opacity: 1;
-    transition: 1s;
 }
 /* Header Part */
 .header {
