@@ -105,12 +105,12 @@ nav .ri {
     text-align: left;
     margin: -9px 0;
     text-shadow: 2px 2px white;
-    color: #cf8310;
+    color:rgb(146, 100, 39);
 }
 
 .head-co h1 span {
     font-size: 4rem;
-    color: #cf8310;
+    color: rgb(146, 100, 39);
 }
 
 @media screen and (max-width: 768px) {
@@ -173,13 +173,14 @@ nav .ri {
 }
 
 h1 {
+    color: black;
     text-align: center;
 }
 
 .menu-sum p {
     text-align: center;
     padding: 50px;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 300;
     line-height: 32px;
     margin: 5px 20px;
@@ -259,6 +260,80 @@ h1 {
         display: none;
     }
 }
+
+/* About Part */
+.banner-container{
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: 200px;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.about-content p {
+    text-align: center;
+    padding: 50px;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 32px;
+    margin: 5px 20px;
+    padding: 10px;
+    color: bisque;
+}
+
+.about-banner{
+    padding: 1rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+}
+
+.about-banner:nth-child(1){
+    background-image: url('Image/IMG-1.png');
+}
+
+.about-banner:nth-child(2){
+    background-image: url('Image/IMG-2.png');
+}
+
+.about-banner:nth-child(3){
+    background-image: url('Image/IMG-3.png');
+}
+
+.about-banner p{
+    margin-bottom: 0.5rem;
+    font-size: 20px;
+    font-weight: 500;
+    color: whitesmoke;
+    color: rba(249, 249, 249);
+}
+
+.about-banner h4{
+    font-size: 30px;
+    font-weight: 500;
+    color: rebeccapurple;
+}
+
+@media (min-width: 540px){
+    .banner-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-banner:nth-child(1){
+        grid-area: 1 / 1 / 2 / 3;
+    }
+}
+@media (min-width: 768px){
+    .about-banner{
+        padding: 1.5rem;
+    }
+
+    .about-banner:nth-child(1){
+        grid-area: 1 / 1 / 3 / 2;
+    }
+}
+
 /* Footer Part */
 
 .footer {
