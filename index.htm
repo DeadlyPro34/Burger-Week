@@ -12,7 +12,7 @@
 
 <body>
     <!-- Header part -->
-    <header class="header">
+    <header class="header" id="section-1">
         <nav class="nav-bar">
             <a href="#">
                 <img src="Image/Logo.png">
@@ -23,10 +23,10 @@
                 </div>
                 <i class="ri ri-close-circle-line" onclick="hidemenu()"></i>
                 <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">MENU</a></li>
-                    <li><a href="#">ABOUT US</a></li>
-                    <li><a href="#">CONTACT US</a></li>
+                    <li><a href="#section-1">HOME</a></li>
+                    <li><a href="#section-2">MENU</a></li>
+                    <li><a href="#section-3">ABOUT US</a></li>
+                    <li><a href="#section-4">CONTACT US</a></li>
                 </ul>
             </div>
             <i class="ri ri-menu-fill" onclick="showmenu()"></i>
@@ -44,98 +44,104 @@
     </header>
 
     <!-- Menu Part -->
-    <section>
-        <h1>Choose & Enjoy</h1>
-        <div class="menu-sum">
-            <p>Hi! Here you can select the burger, coffee, & fries you like to have. Enjoy your meal!</p>
-        </div>
-        <div class="menu-container swiper">
-            <div class="swiper-slider">
-                <div class="menu-order swiper-wrapper">
-                    <div class="menu-items swiper-slide">
-                        <img src="Image/Classic Coffee Regular with Cinammon Spice.png" class="menu-img">
-                        <h2>Classic Coffee Regular</h2>
-                        <button class="menu-button">Order Now</button>
+    <section id="section-2">
+        <div class="reveal">
+            <h1>Choose & Enjoy</h1>
+            <div class="menu-sum">
+                <p>Hi! Here you can select the burger, coffee, & fries you like to have. Enjoy your meal!</p>
+            </div>
+            <div class="menu-container swiper">
+                <div class="swiper-slider">
+                    <div class="menu-order swiper-wrapper">
+                        <div class="menu-items swiper-slide">
+                            <img src="Image/Classic Coffee Regular with Cinammon Spice.png" class="menu-img">
+                            <h2>Classic Coffee Regular</h2>
+                            <button class="menu-button">Order Now</button>
+                        </div>
+                        <div class="menu-items swiper-slide">
+                            <img src="Image/Fries (Large).png" class="menu-img">
+                            <h2>Fries Large</h2>
+                            <button class="menu-button">Order Now</button>
+                        </div>
+                        <div class="menu-items swiper-slide">
+                            <img src="Image/Iced Coffee with Cinammon Spice.png" class="menu-img">
+                            <h2>Iced Coffee</h2>
+                            <button class="menu-button">Order Now</button>
+                        </div>
+                        <div class="menu-items swiper-slide">
+                            <img src="Image/Veg Pizza McPuff.png" class="menu-img">
+                            <h2>Veg. Pizza Puff</h2>
+                            <button class="menu-button">Order Now</button>
+                        </div>
+                        <div class="menu-items swiper-slide">
+                            <img src="Image/Crispy veggie burger.png" class="menu-img">
+                            <h2>Crispy Veggie Burger</h2>
+                            <button class="menu-button">Order Now</button>
+                        </div>
+                        <div class="menu-items swiper-slide">
+                            <img src="Image/BG1.png" class="menu-img">
+                            <h2>Double Patty Veg. Burger</h2>
+                            <button class="menu-button">Order Now</button>
+                        </div>
+                        <div class="menu-items swiper-slide">
+                            <img src="Image/BG2.png" class="menu-img">
+                            <h2>Veg. Aloo Tikkie Burger</h2>
+                            <button class="menu-button">Order Now</button>
+                        </div>
                     </div>
-                    <div class="menu-items swiper-slide">
-                        <img src="Image/Fries (Large).png" class="menu-img">
-                        <h2>Fries Large</h2>
-                        <button class="menu-button">Order Now</button>
-                    </div>
-                    <div class="menu-items swiper-slide">
-                        <img src="Image/Iced Coffee with Cinammon Spice.png" class="menu-img">
-                        <h2>Iced Coffee</h2>
-                        <button class="menu-button">Order Now</button>
-                    </div>
-                    <div class="menu-items swiper-slide">
-                        <img src="Image/Veg Pizza McPuff.png" class="menu-img">
-                        <h2>Veg. Pizza Puff</h2>
-                        <button class="menu-button">Order Now</button>
-                    </div>
-                    <div class="menu-items swiper-slide">
-                        <img src="Image/Crispy veggie burger.png" class="menu-img">
-                        <h2>Crispy Veggie Burger</h2>
-                        <button class="menu-button">Order Now</button>
-                    </div>
-                    <div class="menu-items swiper-slide">
-                        <img src="Image/BG1.png" class="menu-img">
-                        <h2>Double Patty Veg. Burger</h2>
-                        <button class="menu-button">Order Now</button>
-                    </div>
-                    <div class="menu-items swiper-slide">
-                        <img src="Image/BG2.png" class="menu-img">
-                        <h2>Veg. Aloo Tikkie Burger</h2>
-                        <button class="menu-button">Order Now</button>
-                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-slide-button swiper-button-prev"></div>
+                    <div class="swiper-slide-button swiper-button-next"></div>
                 </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-slide-button swiper-button-prev"></div>
-                <div class="swiper-slide-button swiper-button-next"></div>
             </div>
         </div>
     </section>
 
     <!-- About Us -->
-     <section class="about">
-        <div class="about-content">
-            <h1>Hello Guys Welcome to Burger house</h1>
-            <p>About Burgers and history Special...!!!</p>
+    <section class="about" id="section-3">
+        <div class="reveal">
+            <div class="about-content">
+                <h1>Hello Guys Welcome to Burger house</h1>
+                <p>About Burgers and history Special...!!!</p>
+            </div>
+            <div class="about-all banner-container">
+                <div class="about-banner">
+                    <h4>Crispy and Large Burger</h4>
+                    <p>A burger is a sandwich of one.</p>
+                </div>
+                <div class="about-banner">
+                    <h4>Try it Out Today</h4>
+                    <p>The vegetarian burgers found.</p>
+                </div>
+                <div class="about-banner">
+                    <h4>Fresh & Chill</h4>
+                    <p>Indian Burgers</p>
+                </div>
+            </div>
         </div>
-        <div class="about-all banner-container">
-            <div class="about-banner">
-                <h4>Crispy and Large Burger</h4>
-                <p>A burger is a sandwich of one.</p>
-            </div>
-            <div class="about-banner">
-                <h4>Try it Out Today</h4>
-                <p>The vegetarian burgers found.</p>
-            </div>
-            <div class="about-banner">
-                <h4>Fresh & Chill</h4>
-                <p>Indian Burgers</p>
-            </div>
-        </div>
-     </section>
+    </section>
 
     <!-- Call to Action -->
-     <section>
-        <div class="cta-container">
-            <div class="cta-content">
-                <h2>For reservation<br/> Add your details below!!!</h2>
-                <form>
-                    <input type="text" placeholder="Name">
-                    <input type="email" placeholder="E-mail">
-                    <input type="date" placeholder="Date">
-                    <input type="time" placeholder="Time">
-                    <input type="number" placeholder="Phone no.">
+    <section id="section-4">
+        <div class="reveal">
+            <div class="cta-container">
+                <div class="cta-content">
+                    <h2>For reservation<br /> Add your details below!!!</h2>
+                    <form>
+                        <input type="text" placeholder="Name">
+                        <input type="email" placeholder="E-mail">
+                        <input type="date" placeholder="Date">
+                        <input type="time" placeholder="Time">
+                        <input type="number" placeholder="Phone no.">
 
-                    <div class="cta-btn">
-                        <button type="submit">Find a table</button>
-                    </div>
-                </form>
+                        <div class="cta-btn">
+                            <button type="submit">Find a table</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-     </section>
+    </section>
 
     <!-- Footer Part -->
     <footer class="footer">

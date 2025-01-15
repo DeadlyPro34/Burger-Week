@@ -10,6 +10,18 @@
 section{
     background-image: url('Image/Ma3.png');
 } 
+
+.reveal{
+    transform: translateY(150px);
+    opacity: 1;
+    transition: all 1s ease;
+}
+
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+    transition: 1s;
+}
 /* Header Part */
 .header {
     min-height: 100vh;
