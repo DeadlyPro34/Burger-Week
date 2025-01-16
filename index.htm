@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Burger Week</title>
 </head>
 
@@ -15,14 +16,14 @@
     <header class="header container" id="section-1">
         <nav class="nav-bar">
             <a href="#">
-                <img src="Image/Logo.png">
+                <img src="Image/Logo.png" data-aos="fade-right" data-aos-duration="1400">
             </a>
-            <div class="nav-link" id="navlink">
-                <div class="Delivery">
+            <div class="nav-link" id="navlink" >
+                <div class="Delivery" data-aos="fade-left" data-aos-duration="1400">
                     <h5>Express Delivery +1 234 567 890</h5>
                 </div>
-                <i class="ri ri-close-circle-line" onclick="hidemenu()"></i>
-                <ul>
+                <i class="ri ri-close-circle-line" onclick="hidemenu()" ></i>
+                <ul data-aos="fade-left" data-aos-duration="1400">
                     <li><a href="#section-1">HOME</a></li>
                     <li><a href="#section-2">MENU</a></li>
                     <li><a href="#section-3">ABOUT US</a></li>
@@ -33,11 +34,11 @@
         </nav>
         <div class="head-content">
             <div class="head-co">
-                <h2>It is a good time for the great taste of burgers</h2>
-                <h1>Burger<br>Week</h1>
+                <h2 data-aos="fade-right" data-aos-duration="1400">It is a good time for the great taste of burgers</h2>
+                <h1 data-aos="zoom-out" data-aos-duration="1400">Burger<br>Week</h1>
             </div>
             <div class="head-bur">
-                <img src="Image/MX2.png">
+                <img src="Image/MX2.png" data-aos="zoom-in" data-aos-duration="1400">
             </div>
 
         </div>
@@ -146,30 +147,37 @@
     <!-- Footer Part -->
     <footer class="footer">
 
-        <img src="Image/Background.png" class="img">
-        <div class="foot-ye">
+        <img src="Image/Background.png" class="img"  data-aos="zoom-in" data-aos-duration="1400">
+        <div class="foot-ye"  data-aos="zoom-in" data-aos-duration="1400">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo laboriosam voluptas pariatur delectus
                 voluptate ullam deleniti est veritatis consectetur nesciunt!
             </p>
         </div>
         <div>
-            <ul class="foot-yo">
+            <ul class="foot-yo"  data-aos="zoom-in" data-aos-duration="1400">
                 <li><i class="ri-map-pin-fill">RC Road,TUMA,AHMEDBAD</i></li>
                 <li><i class="ri-mail-fill">burger.house@yahoo.com</i></li>
             </ul>
         </div>
-        <div class="foot-icons">
+        <div class="foot-icons"  data-aos="zoom-in" data-aos-duration="1400">
             <a><i class="ri-facebook-circle-line"></i></a>
             <a><i class="ri-twitter-x-line"></i></a>
             <a><i class="ri-instagram-line"></i></a>
             <a><i class="ri-whatsapp-line"></i></a>
         </div>
-        <div class="foot-cpy">
+        <div class="foot-cpy"  data-aos="zoom-in" data-aos-duration="1400">
             <p>© Copyright Owner Burger House Since 2025</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 1,
+        });
     </script>
 
     <script src="script.js"></script>

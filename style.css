@@ -437,16 +437,7 @@ h1 {
         text-align: center;
     }
 
-    /* About us Media Query of 540px */
-    /* .banner-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .about-banner:nth-child(1) {
-        grid-area: 1 / 1 / 2 / 3;
-    } */
-
-    /* Footer media query of 540px */ 
+    /* footer section media query 540px */
     .foot-yo { 
         margin: 10px 66px 0px 0px;
     }
@@ -546,14 +537,6 @@ h1 {
     }
 
     /* About section media query */
-    /* .about-banner {
-        padding: 1.5rem;
-    }
-
-    .about-banner:nth-child(1) {
-        grid-area: 1 / 1 / 3 / 2;
-    } */
-
     .swiper-slider .swiper-slide-button{
         display: none;
     }
