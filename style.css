@@ -410,14 +410,7 @@ h1 {
         max-width: 768px;
     }
 
-    /* head section media query */
-    .head-bur img {
-        width: 50%;
-        height: 50%;
-        position: absolute;
-        right: 23%;
-    }
-
+    /* head section media query of 768px*/
     .nav-link {
         position: fixed;
         background: transparent;
@@ -435,9 +428,18 @@ h1 {
         display: block;
     }
 
+    .nav-link a{
+        font-size: 18px;
+        color: blueviolet;
+    }
+
+    .Delivery{
+        display: none;
+    }
+
     nav .ri {
         display: block;
-        color: black;
+        color: rgba(12, 27, 112, 0.726);
         margin: 10px;
         font-size: 25px;
         cursor: pointer;
@@ -453,15 +455,34 @@ h1 {
         align-items: center;
     }
 
-    .head-co h2 {
-        font-size: medium;
-        display: flex;
-        justify-content: center;
-        inset-block-start: unset;
+    .head-bur img{
+        margin-top: -9%;
+        height: 76%;
     }
 
     .head-co h1 {
+        font-size: 70px;
         text-align: center;
+    }
+
+    /* Menu section media query of 768px */
+    .menu-sum p {
+        font-size: 20px;
+    }
+    .menu-order .menu-items img{
+        width: 300px;
+        height: 250px;
+        border-radius: 10%;
+        margin-bottom: 5px;
+        padding: 50px;
+    }
+
+    .menu-order .menu-items h2{
+        font-size: 20px;
+    }
+
+    .menu-order .menu-items .menu-button{
+        font-size: 18px;
     }
 
     /* About section media query */
@@ -478,93 +499,78 @@ h1 {
     }
 }
 
-@media (max-width: 1550px) {
+@media (max-width > 1228px) {
     .container{
-        max-width: 1550px;
+        max-width: 1228px;
     }
 
     /* header media query of 1550px */
     .nav-bar img {
-        width: 350px;
+        width: 220px;
     }
     
     .nav-link ul li {
         display: inline-block;
-        padding: 16px 24px;
+        padding: 10px 18px;
         position: relative;
     }
     
     .nav-link a {
-        color: rgb(105, 73, 31);
-        text-decoration: none;
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .Delivery {
-        color: rgb(105, 73, 31);
-        height: 40px;
-        background-size: 40px;
-        background-position: right 300px top;
-        background-attachment: scroll;
-        font-size: 25px;
+        height: 25px;
+        background-size: 25px;
+        background-position: right 240px top;
+        font-size: 20px;
     }
     
     .head-co h2 {
-        font-size: 30px;
+        font-size: 25px;
     }
     
     .head-co h1 {
-        font-size: 120px;
-        line-height: 7.5rem;
+        font-size: 80px;
+        line-height: 5rem;
     }
 
     h1 {
-        font-size: 40px;
+        font-size: 30px;
     }
     
     .menu-sum p {
-        font-size: 30px;
+        font-size: 25px;
     }
     
     .menu-order .menu-items img {
-        width: 500px;
-        height: 400px;
+        width: 350px;
+        height: 300px;
         border-radius: 10%;
-        margin-bottom: 20px;
-        padding: 70px;
+        margin-bottom: 10px;
+        padding: 60px;
     }
     
     .menu-order .menu-items h2 {
-        font-size: 30px;
+        font-size: 19px;
     }
     
     .menu-order .menu-items .menu-button {
-        font-size: 25px;
+        font-size: 20px;
     }
 
-    .swiper-slider {
-        margin: 50px 100px 50px 100px;
-    }
 
     /* about section media query of 1550px*/
     .about-content p {
-        font-size: 30px;
-    }
-
-    .about-banner {
-        margin: 17px 5px;
-        padding: 1rem;
-        width: auto;
-        height: 200px;
-        border-radius: 2rem;
+        font-size: 25px;
     }
 
     .about-banner p {
-        font-size: 30px;
+        font-size: 25px;
     }
     
     .about-banner h4 {
-        font-size:60px;
+        font-size:40px;
     }
 
     /* cta media query for 1550px */
@@ -584,11 +590,18 @@ h1 {
 
     /* footer media query for 1550px */
     .foot-ye p {
-        font-size: 25px;
+        font-size: 20px;
         max-width: 350px;
     }
     
     .foot-yo li {
         font-size: 20px;
     }
+}
+
+@media (max-width: 1550px) {
+     .swiper-slider {
+        margin: 50px 100px 50px 100px;
+    } 
+    
 }
