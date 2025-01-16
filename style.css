@@ -390,10 +390,23 @@ h1 {
     color: rebeccapurple;
 }
 
-@media (min-width: 540px) {
+@media (max-width: 540px) {
     .container{
-        min-width: 540px;
+        max-width: 540px;
     }
+
+    /* Header section media query of 540px */
+    .head-bur img{
+        margin-top: -9%;
+        height: 80%;
+    }
+
+    .head-co h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    /* About us Media Query of 540px */
     .banner-container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -457,7 +470,7 @@ h1 {
 
     .head-bur img{
         margin-top: -9%;
-        height: 76%;
+        height: 65%;
     }
 
     .head-co h1 {
@@ -499,7 +512,7 @@ h1 {
     }
 }
 
-@media (max-width > 1228px) {
+@media (max-width: 1220px) {
     .container{
         max-width: 1228px;
     }
