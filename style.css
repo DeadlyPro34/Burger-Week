@@ -377,7 +377,6 @@ h1 {
 }
 
 /* Footer Part */
-
 .footer {
     background-image: url('Image/cta.png');
     background-position: center center;
@@ -446,7 +445,8 @@ h1 {
 
     /* Header section media query of 540px */
     .head-bur img{
-        margin: 0px 0px 177px 8px;
+        width: 297px;
+        margin: 0px -4px 160px 9px;
     }
 
     .head-co h1 {
@@ -458,16 +458,16 @@ h1 {
     .foot-yo { 
         margin: 10px 66px 0px 0px;
     }
-    
-    .foot-yo li {
+ 
+    .foot-yo li{
         display: flex;
         align-items: center;
         gap: 1rem;
         font-weight: 500;
     }
 
-    .foot-icons a {
-        margin-top: 9%;
+    .foot-cpy {
+        text-align: center;
     }
 }
 
@@ -533,6 +533,32 @@ h1 {
         text-align: center;
     }
 
+    .foot-yo {
+        position: static;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .foot-ye p{
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        color: blanchedalmond;
+    }
+
+    .foot-icons {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .foot-cpy {
+        text-align: center;
+    }
 
 }
 
@@ -574,19 +600,6 @@ h1 {
 
     h1 {
         font-size: 30px;
-    }
-
-    /* about section media query of 1220px*/
-    .about-content p {
-        font-size: 25px;
-    }
-
-    .about-banner p {
-        font-size: 25px;
-    }
-    
-    .about-banner h4 {
-        font-size:40px;
     }
 
     /* cta media query for 1220px */
