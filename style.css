@@ -155,6 +155,7 @@ h1 {
 
 .menu-order .menu-items {
     color: white;
+    user-select: none;
     width: 300px;
     padding: 25px;
     display: flex;
@@ -201,20 +202,36 @@ h1 {
     color: burlywood;
 }
 
-.swiper-slider {
+.slider-wrapper{
     overflow: hidden;
     max-width: 1200px;
     margin: 0px 70px 55px;
 }
 
-.swiper-slider .swiper-slide-button {
-    color: rgb(224, 106, 106);
+.swiper-wrapper .swiper-pagination-bullet{
+    background: white;
+    height: 15px;
+    width: 15px;
+}
+
+.slider-wrapper .swiper-slide-button{
+    color: rgb(123, 52, 52);
     margin-top: -50px;
-    transition: 0.2 ease;
+    transition: 0.2s ease;
 }
 
 .swiper-slider .swiper-slide-button:hover {
     color: aquamarine;
+}
+
+@media (max-width: 1150px){
+    .slider-wrapper{
+        margin: 0 10px 40px;
+    }
+
+    .slider-wrapper .swiper-slide-button{
+        display: none;
+    }
 }
 
 /* About Part */
@@ -516,30 +533,7 @@ h1 {
         text-align: center;
     }
 
-    /* Menu section media query of 768px */
-    .menu-sum p {
-        font-size: 20px;
-    }
-    .menu-order .menu-items img{
-        width: 300px;
-        height: 250px;
-        border-radius: 10%;
-        margin-bottom: 5px;
-        padding: 50px;
-    }
 
-    .menu-order .menu-items h2{
-        font-size: 20px;
-    }
-
-    .menu-order .menu-items .menu-button{
-        font-size: 18px;
-    }
-
-    /* About section media query */
-    .swiper-slider .swiper-slide-button{
-        display: none;
-    }
 }
 
 @media (max-width: 1220px) {
@@ -547,7 +541,7 @@ h1 {
         max-width: 1228px;
     }
 
-    /* header media query of 1550px */
+    /* header media query of 1220px */
     .nav-bar img {
         width: 220px;
     }
@@ -581,29 +575,8 @@ h1 {
     h1 {
         font-size: 30px;
     }
-    
-    .menu-sum p {
-        font-size: 25px;
-    }
-    
-    .menu-order .menu-items img {
-        width: 350px;
-        height: 300px;
-        border-radius: 10%;
-        margin-bottom: 10px;
-        padding: 60px;
-    }
-    
-    .menu-order .menu-items h2 {
-        font-size: 19px;
-    }
-    
-    .menu-order .menu-items .menu-button {
-        font-size: 20px;
-    }
 
-
-    /* about section media query of 1550px*/
+    /* about section media query of 1220px*/
     .about-content p {
         font-size: 25px;
     }
@@ -616,7 +589,7 @@ h1 {
         font-size:40px;
     }
 
-    /* cta media query for 1550px */
+    /* cta media query for 1220px */
     .cta-content h2{
         font-size: 30px;
     }
@@ -646,5 +619,4 @@ h1 {
      .swiper-slider {
         margin: 50px 100px 50px 100px;
     } 
-    
 }

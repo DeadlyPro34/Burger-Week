@@ -28,7 +28,7 @@ function reveal(){
 }
 
 // Swiper Slider for Menu
-const swiper = new Swiper('.swiper-slider', {
+const swiper = new Swiper('.slider-wrapper', {
     grabCursor: true,
     loop: true,
     spaceBetween: 30,
