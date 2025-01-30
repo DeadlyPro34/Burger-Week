@@ -301,12 +301,20 @@ nav .ri {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .about-all{
+        margin-left: 0.3rem;
+    }
+
     .about-banner:nth-child(1) {
         grid-area: 1 / 1 / 2 / 2;
     }
 }
 
 @media (min-width: 768px) {
+    .about-all{
+        margin-left: 0.3rem;
+    }
+
     .about-banner {
         padding: 1.5rem;
     }
@@ -317,6 +325,9 @@ nav .ri {
 }
 
 @media (min-width: 1220px) {
+    .about-all{
+        margin-left: 0.3rem;
+    }
     .banner-container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -361,7 +372,9 @@ nav .ri {
 }
 
 @media (min-width: 768px) {
+
     .blog-image {
+        margin: 0.3rem;
         grid-area: 1/2/2/3;
     }
 }
@@ -496,7 +509,7 @@ nav .ri {
         font-size: 30px;
         text-align: center;
     }
-
+    
     /* footer section media query 540px */
     .img {
         display: block;
@@ -686,8 +699,8 @@ nav .ri {
     }
 }
 
-@media (max-width: 1550px) {
-    .swiper-slider {
+@media (min-width: 1550px) {
+    .slider-wrapper {
         margin: 90px 150px 90px 150px;
     }
 }
