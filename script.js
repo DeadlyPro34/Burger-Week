@@ -1,12 +1,3 @@
-// Navigation bar
-var navlink = document.getElementById('navlink');
-function showmenu(){
-    navlink.style.right = '0';
-}
-function hidemenu(){
-    navlink.style.right='-200px';
-}
-
 // Scroll smooth
 window.addEventListener('scroll',reveal); 
 function reveal(){
@@ -26,6 +17,14 @@ function reveal(){
         }
     }
 }
+
+/*Change background */
+const scrollHeader = () =>{
+    const header = document.getElementById('header')
+    this.scroll >= 50 ? header.classList.add('shadow-header')
+    :header.classList.remove('shadow-header')
+}
+window.addEventListener('scroll',shadowHeader)
 
 // Swiper Slider for Menu
 const swiper = new Swiper('.slider-wrapper', {
