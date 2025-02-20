@@ -5,16 +5,19 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
+    
 }
 
 html {
     scroll-behavior: smooth;
     scroll-padding: -25rem;
+    background-color: pink;
 }
 
 section {
     padding-block: 5rem 1rem;
-    background-image: url('Image/Ma2.png');
+    
+    background-image: url('Image/Ma4.png');
 }
 
 img {
