@@ -18,14 +18,6 @@ function reveal(){
     }
 }
 
-/*Change background */
-const scrollHeader = () =>{
-    const header = document.getElementById('header')
-    this.scroll >= 50 ? header.classList.add('shadow-header')
-    :header.classList.remove('shadow-header')
-}
-window.addEventListener('scroll',shadowHeader)
-
 // Swiper Slider for Menu
 const swiper = new Swiper('.slider-wrapper', {
     grabCursor: true,
