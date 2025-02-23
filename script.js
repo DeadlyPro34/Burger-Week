@@ -25,7 +25,7 @@ const swiper = new Swiper('.slider-wrapper', {
     spaceBetween: 30,
     slidesPerView: 'auto',
     centeredSlide: true,
-  
+   
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',

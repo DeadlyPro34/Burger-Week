@@ -15,8 +15,7 @@ html {
 }
 
 section {
-    padding-block: 5rem 1rem;
-    
+    padding-block: 5rem 3rem;
     background-image: url('Image/Ma4.png');
 }
 
@@ -404,7 +403,7 @@ a{
 .cta-container {
     width: 100%;
     height: fit-content;
-    border-radius: 10px;
+    border-radius: 10px solid;
     text-align: center;
 }
 
@@ -422,13 +421,20 @@ a{
 }
 
 .cta-content input {
-    margin: 5px;
+    margin: 8px 0;
+    padding: 12px 20px;
     height: 28px;
     outline: none;
-    border: 1px solid rgba(125, 4, 4, 0.5);
+    border: 3px solid #ccc;
     font-size: 15px;
     color: grey;
     border-radius: 10px;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.cta-content input:focus{
+    border: 3px solid rgba(125, 4, 4, 0.5);
 }
 
 .cta-btn button {
