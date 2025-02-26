@@ -5,13 +5,11 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-    
 }
 
 html {
     scroll-behavior: smooth;
     scroll-padding: -25rem;
-    background-color: pink;
 }
 
 section {
@@ -25,7 +23,7 @@ img {
 }
 
 h1 {
-    color: rgb(252, 134, 134);
+    color: rgb(146, 12, 12);
     text-align: center;
 }
 
@@ -119,7 +117,7 @@ a{
 #section-1{
     width: 100%;
     height: auto;
-    background-image: url('Image/Ma1.png');
+    background-image: url('Image/Ma5.png');
     background-position: center;
     background-size: cover;
 }
@@ -142,21 +140,22 @@ a{
 }
 
 .head-co h2 {
-    font-size: 20px;
-    max-width: 400px;
+    font-size: 25px;
+    max-width: 500px;
     font-weight: 500;
     text-align: left;
-    color: rgb(146, 100, 39);
-    border: 1px dashed rgb(0, 0, 0);
+    color: rgb(165, 83, 203);
+    text-shadow: 1px 0px white;
+    border: 1px dashed rgb(165, 83, 283);
 }
 
 .head-co h1 {
-    font-size: 70px;
+    font-size: 90px;
     font-weight: 800;
     line-height: 5rem;
     text-align: left;
-    text-shadow: 2px 2px white;
-    color: rgb(146, 100, 39);
+    text-shadow: 3px 4px white;
+    color: rgb(165, 83, 203);
 }
 
 .shadow-header{
@@ -705,7 +704,18 @@ a{
     }
 }
 
+@media (min-width: 1220px){
+    .nav__link i {
+        display: none;
+    }
+    .nav__link span {
+        font-size: 1rem;
+        justify-content: center;
+    }
+}
+
 @media (min-width: 1550px) {
+
     .slider-wrapper {
         margin: 90px 150px 90px 150px;
     }
