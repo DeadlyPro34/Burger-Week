@@ -115,11 +115,12 @@ a{
 
 /* Home section */
 #section-1{
-    width: 100%;
-    height: auto;
-    background-image: url('Image/Ma5.png');
+    height: 100vh;
+    position: relative;
+    background-image: linear-gradient(rgba(12,3,51,0.3), rgba(12,3,51,0.3));
+    /* background-image: url('Image/Ma5.png');
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
 }
 
 .head-content {
@@ -719,4 +720,11 @@ a{
     .slider-wrapper {
         margin: 90px 150px 90px 150px;
     }
+}
+
+.back-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
 }
