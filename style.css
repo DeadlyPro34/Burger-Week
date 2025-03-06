@@ -121,7 +121,7 @@ button {
 } 
 
 .Delivery img{
-    width: 18px;
+    width: 25px;
     position: absolute;
     top: 0;
     right: 100%;
@@ -163,17 +163,17 @@ button {
 }
 
 .head-co h2 {
-    font-size: 20px;
+    font-size: 15px;
     max-width: 500px;
     font-weight: 500;
-    text-align: left;
+    text-align: center;
     color: rgb(165, 83, 203);
     text-shadow: 1px 0px white;
-    border: 1px dashed rgb(165, 83, 283);
+    border: 2px dashed rgb(165, 83, 283);
 }
 
 .head-co h1 {
-    font-size: 90px;
+    font-size: 70px;
     font-weight: 800;
     line-height: 5rem;
     text-align: left;
@@ -397,10 +397,9 @@ button {
 
 .blog-content p {
     margin-bottom: 0.5rem;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     color: whitesmoke;
-    color: rba(249, 249, 249);
 }
 
 .blog-content h2 {
@@ -440,6 +439,12 @@ input:focus {
     color: #000;
 }
 
+.ctn-content{
+    position: relative;
+    right: 15rem;
+    top: 16rem;
+}
+
 .content {
     padding-top: 48px;
     position: relative;
@@ -447,15 +452,6 @@ input:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.content .ctn-content {
-    max-width: 310px;
-    padding-bottom: 72px;
-}
-
-.content .ctn-content .subtitle {
-    font-size: 16px;
 }
 
 .content .ctn-form {
@@ -568,7 +564,6 @@ input:focus {
     }
 
     .head-co h1 {
-        font-size: 30px;
         text-align: center;
     }
 
@@ -606,14 +601,13 @@ input:focus {
         align-items: center;
     }
 
-    .head-bur img {
-        margin-top: -3%;
-        height: 65%;
+    .head-co h1 {
+        text-align: center;
     }
 
-    .head-co h1 {
-        font-size: 70px;
-        text-align: center;
+    .head-bur img {
+        margin-top: -8%;
+        height: 67%;
     }
 
     .img {
@@ -624,9 +618,16 @@ input:focus {
     }
 
     /* ctn 768px */
+    .ctn-content {
+        right: 0;
+        top: 0;
+        text-align: center;
+    }
+
     .content {
         flex-direction: column;
         align-items: center;
+        justify-content: flex-start;
     }
 
     .content .ctn-form {
@@ -652,6 +653,7 @@ input:focus {
         display: flex;
         justify-content: center;
         color: blanchedalmond;
+        text-align: center;
     }
 
     .foot-icons {
@@ -695,7 +697,7 @@ input:focus {
     }
 
     .head-co h1 {
-        font-size: 80px;
+        font-size: 55px;
         line-height: 4rem;
     }
 
