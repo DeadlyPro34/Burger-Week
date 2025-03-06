@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Image/burger.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
@@ -191,26 +192,24 @@
         </section>
 
         <!-- Call to Action -->
-        <section id="section-5">
-            <div class="reveal">
-                <div class="cta-container">
-                    <div class="cta-content">
-                        <h2>For reservation<br /> Add your details below!!!</h2>
-                        <form>
-                            <input type="text" placeholder="Name">
-                            <input type="email" placeholder="E-mail">
-                            <input type="date" placeholder="Date">
-                            <input type="time" placeholder="Time">
-                            <input type="number" placeholder="Phone no.">
-
-                            <div class="cta-btn">
-                                <button type="submit">Find a table</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+        <section id="section-5" class="content">
+            <div class="ctn-content">
+                <h1 class="title">
+                    Have a questions?
+                </h1>
+                <p class="subtitle">
+                    Leave a message and we will help!
+                </p>
             </div>
-        </section>
+            <form class="ctn-form">
+                <input type="text" placeholder="Name" required="" />
+                <input type="number" placeholder="Phone no." required="" />
+                <input type="datetime-local" placeholder="Date" required="" />
+                <input type="email" placeholder="Email" required="" />
+                <textarea class="feedback-form__message" cols="30" name="text" placeholder="Message" required=""
+                    rows="5"></textarea><button class="feedback-form__submit">Sumbit</button>
+            </form>
+    </section>
     </main>
 
     <!-- Footer Part -->
@@ -219,18 +218,18 @@
         <div class="foot-ye" data-aos="zoom-in" data-aos-duration="1400">
             <p>We hope you had a fantastic time exploring new flavors, indulging in delicious burgers, and creating unforgettable memories. Until next time, keep the sizzle alive and stay burgerlicious! 🍔
             </p>
-            <div>
-                <ul class="foot-yo" data-aos="zoom-in" data-aos-duration="1400">
-                    <li><span><i class="ri-map-pin-fill">RC Road,TUMA,AHMEDBAD</i></span></li>
-                    <li><span><i class="ri-mail-fill">burger.house@yahoo.com</i></span></li>
-                </ul>
-                <div class="foot-icons" data-aos="zoom-in" data-aos-duration="1400">
-                    <a><i class="ri-facebook-circle-line"></i></a>
-                    <a><i class="ri-twitter-x-line"></i></a>
-                    <a><i class="ri-instagram-line"></i></a>
-                    <a><i class="ri-whatsapp-line"></i></a>
-                </div>
-            </div>
+        </div>
+        <div>
+            <ul class="foot-yo" data-aos="zoom-in" data-aos-duration="1400">
+                <li><i class="ri-map-pin-fill">RC Road,TUMA,AHMEDBAD</i></li>
+                <li><i class="ri-mail-fill">burger.house@yahoo.com</i></li>
+            </ul>
+        </div>
+        <div class="foot-icons" data-aos="zoom-in" data-aos-duration="1400">
+            <a><i class="ri-facebook-circle-line"></i></a>
+            <a><i class="ri-twitter-x-line"></i></a>
+            <a><i class="ri-instagram-line"></i></a>
+            <a><i class="ri-whatsapp-line"></i></a>
         </div>
         <div class="foot-cpy" data-aos="zoom-in" data-aos-duration="1400">
             <p>© Copyright Owner Burger House Since 2025</p>

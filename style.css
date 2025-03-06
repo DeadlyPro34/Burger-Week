@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&family=Playwrite+VN:wght@100..400&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&family=Playwrite+VN:wght@100..400&display=swap'); */
 
 * {
+    font-family: "Playwrite DE Grund", cursive;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -29,6 +30,18 @@ h1 {
 
 a{
     text-decoration: none;
+}
+
+button {
+    font-size: 14px;
+    background-color: #e0674c;
+    padding: 12px 26px;
+    border-radius: 40px;
+    width: auto;
+    color: #3b4a67;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.08);
 }
 
 .reveal {
@@ -221,7 +234,7 @@ a{
     margin: 14px 0 40px;
 }
 
-.menu-order .menu-items .menu-button {
+.menu-order .menu-items {
     font-size: 15px;
     padding: 10px 35px;
     color: blueviolet;
@@ -408,58 +421,56 @@ a{
 
 
 /* Cta */
-.cta-container {
-    text-align: center;
-}
-
-.cta-content h2 {
-    font-weight: 500;
-    color: rgb(252, 134, 134);
-}
-
-.cta-content form {
-    max-width: 400px;
-    margin-inline: auto;
-    margin-top: 1rem;
-    display: grid;
-    gap: 1rem;
-}
-
-.cta-content input {
-    margin: 8px 0;
-    padding: 12px 20px;
-    height: 28px;
-    outline: none;
-    border: 3px solid #ccc;
-    font-size: 15px;
-    color: grey;
+textarea,
+input {
+    border: none;
+    background-image: none;
+    background-color: #fff;
+    box-shadow: none;
+    font-size: 14px;
+    padding: 16px;
     border-radius: 10px;
-    -webkit-transition: .5s;
-    transition: .5s;
+    border: 0px;
+    resize: none;
+    box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.04);
 }
 
-.cta-content input:focus{
-    border: 3px solid rgba(125, 4, 4, 0.5);
+input:hover,
+input:focus {
+    color: #000;
 }
 
-.cta-btn button {
-    text-decoration: none;
-    display: inline-block;
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    padding: 2px 20px;
-    border-radius: 50px;
-    margin-top: 20px;
-    background: transparent;
+.content {
+    padding-top: 48px;
     position: relative;
-    cursor: pointer;
-    transition: .5s;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.cta-btn button:hover {
-    background: rgb(204, 181, 181);
-    transition: 0.5s;
+.content .ctn-content {
+    max-width: 310px;
+    padding-bottom: 72px;
+}
+
+.content .ctn-content .subtitle {
+    font-size: 16px;
+}
+
+.content .ctn-form {
+    min-width: 280px;
+    padding-left: 64px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content .ctn-form * {
+    margin-bottom: 16px;
+}
+
+.content .ctn-form button {
+    align-self: flex-end;
 }
 
 /* Footer Part */
@@ -477,7 +488,6 @@ a{
 }
 
 .foot-ye {
-    /* grid-template-columns: repeat(2, 3fr); */
     margin-top: 2rem;
     display: grid;
     gap: 2rem;
@@ -492,22 +502,23 @@ a{
 
 .foot-yo {
     display: grid;
+    margin: -90px 85px;
+    position: absolute;
+    right: 0%;
 }
 
-.foot-yo li {
+.foot-yo li span{
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-weight: 500;
+    font-size: 15px;
 }
 
-.foot-yo li span {
-    font-size: 15px;
-    float: right;
+.foot-yo a{
+    display: inline-block;
+    font-size: 20px;
 }
 
 .foot-icons {
-    margin-top: 2rem;
+    margin-top: 32px;
     display: flex;
     justify-content: center;
     gap: 1rem;
@@ -515,6 +526,7 @@ a{
 
 .foot-icons a {
     font-size: 20px;
+
 }
 
 .foot-icons a:hover {
@@ -523,7 +535,7 @@ a{
 
 .foot-cpy {
     padding: 16px;
-    font-size: 10px;
+    font-size: 14px;
     text-align: center;
 }
 
@@ -559,6 +571,26 @@ a{
         font-size: 30px;
         text-align: center;
     }
+
+    /* footer section media query 540px */
+    .img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 250px;
+    }
+
+    .foot-yo {
+        margin: 10px 66px 0px 0px;
+    }
+
+    .foot-yo li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-weight: 500;
+    }
+
 }
 
 /* media query setup */
@@ -589,6 +621,44 @@ a{
         margin-left: auto;
         margin-right: auto;
         max-width: 250px;
+    }
+
+    /* ctn 768px */
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content .ctn-form {
+        padding-left: 0;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    /*Foter media query 768px*/
+    .foot-yo {
+        position: static;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .foot-ye p {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        color: blanchedalmond;
+    }
+
+    .foot-icons {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
     }
 
 }
@@ -633,19 +703,14 @@ a{
         font-size: 30px;
     }
 
-    /* cta media query for 1220px */
-    .cta-content h2 {
-        font-size: 25px;
+    /* footer media query for 1550px */
+    .foot-ye p {
+        font-size: 18px;
+        max-width: 350px;
     }
 
-    .cta-content input {
-        margin: 5px;
-        height: 25px;
-        font-size: 16px;
-    }
-
-    .cta-btn button {
-        font-size: 20px;
+    .foot-yo li {
+        font-size: 15px;
     }
 }
 
@@ -668,6 +733,7 @@ a{
     .foot-ye {
         grid-template-columns: repeat(2, 1fr);
     }
+    
     /* footer media query for 1220px */
     .foot-yo li {
         justify-content: flex-end;
