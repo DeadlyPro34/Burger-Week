@@ -56,3 +56,9 @@ const swiper = new Swiper('.slider-wrapper', {
         }
     }
 });
+
+// video 
+// function toggleMute() {
+//     var video = document.getElementById("back-video");
+//     video.muted = !video.muted;
+// }

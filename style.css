@@ -135,6 +135,12 @@ button {
     z-index: -1;
 }
 
+/* .video-btn{
+    position: absolute;
+    left: 0;
+    bottom: 16;
+} */
+
 /* Home section */
 #section-1{
     height: 100vh;
