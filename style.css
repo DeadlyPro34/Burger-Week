@@ -15,7 +15,7 @@ html {
 
 section {
     padding-block: 5rem 3rem;
-    background-image: url('Image/Ma4.png');
+    /* background-image: url('Image/Ma4.png'); */
 }
 
 img {
@@ -24,7 +24,7 @@ img {
 }
 
 h1 {
-    color: rgb(146, 12, 12);
+    color: red;
     text-align: center;
 }
 
@@ -34,11 +34,11 @@ a{
 
 button {
     font-size: 14px;
-    background-color: #e0674c;
+    background-color: red;
     padding: 12px 26px;
     border-radius: 40px;
     width: auto;
-    color: #3b4a67;
+    color: white;
     border: none;
     cursor: pointer;
     box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.08);
@@ -206,26 +206,26 @@ button {
     line-height: 32px;
     margin: 5px 20px;
     padding: 10px;
-    color: bisque;
+    color: #ff9718;
 }
 
 .menu-order .menu-items {
     color: white;
     user-select: none;
-    width: 300px;
-    padding: 25px;
+    width: 200px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 8px;
     backdrop-filter: blur(30px);
-    background: rgba(225, 225, 225, 0.5);
-    border: 1px solid rgba(225, 225, 225, 0.5);
+    background: rgba(198, 138, 138, 0.5);
+    border: 1px solid rgba(204, 181, 181, 0.5);
 }
 
 .menu-order .menu-items .menu-img {
-    width: 300px;
+    width: 250px;
     height: 200px;
     border-radius: 10%;
     margin-bottom: 10px;
@@ -233,15 +233,15 @@ button {
 }
 
 .menu-order .menu-items h2 {
-    font-size: 18px;
+    font-size: 15px;
     color: black;
     text-align: center;
     font-weight: 500;
-    margin: 14px 0 40px;
+    margin: 10px 0 30px;
 }
 
 .menu-order .menu-items {
-    font-size: 15px;
+    font-size: 10px;
     padding: 10px 35px;
     color: blueviolet;
     border-radius: 6px;
@@ -260,7 +260,7 @@ button {
 
 .slider-wrapper {
     overflow: hidden;
-    max-width: 1200px;
+    max-width: 1110px;
     margin: 0px 70px 55px;
 }
 
@@ -271,7 +271,7 @@ button {
 }
 
 .slider-wrapper .swiper-slide-button {
-    color: rgb(123, 52, 52);
+    color: rgb(228, 91, 91);
     margin-top: -50px;
     transition: 0.2s ease;
 }
@@ -306,7 +306,7 @@ button {
     line-height: 32px;
     margin: 5px 20px;
     padding: 10px;
-    color: bisque;
+    color: #ff9718;
 }
 
 .about-banner {
@@ -394,8 +394,8 @@ button {
     margin-top: auto;
     display: grid;
     gap: 2rem;
-    padding: 1rem;
-    box-shadow: 5px 5px 20px rgba(146, 27, 27, 0.1);
+    padding: 3rem;
+    box-shadow: 5px 5px 20px rgba(146, 27, 27, 0.3);
 }
 
 .blog-details {
@@ -406,7 +406,7 @@ button {
     margin-bottom: 0.5rem;
     font-size: 16px;
     font-weight: 500;
-    color: whitesmoke;
+    color: #ff9718;
 }
 
 .blog-content h2 {
@@ -420,7 +420,7 @@ button {
 
 @media (min-width: 768px) {
     .blog-image {
-        margin: 0.3rem;
+        margin: 0.5rem;
         grid-area: 1/2/2/3;
     }
 }
