@@ -363,6 +363,7 @@ button {
     .about-banner:nth-child(1) {
         grid-area: 1 / 1 / 2 / 3;
     }
+
 }
 
 @media (min-width: 1220px) {
@@ -452,6 +453,24 @@ input:focus {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.content img{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+}
+
+.ctn-img1{
+    left: -34rem;
+    top: 0;
+    width: 18vw;
+}
+
+.ctn-img2{
+    right: -28rem;
+    bottom: 15px;
+    width: 18vw;
 }
 
 .content .ctn-form {
@@ -630,6 +649,10 @@ input:focus {
         justify-content: flex-start;
     }
 
+    .content img{
+        display: none;
+    }
+
     .content .ctn-form {
         padding-left: 0;
     }
@@ -703,6 +726,16 @@ input:focus {
 
     h1 {
         font-size: 30px;
+    }
+
+    .ctn-img1{
+        left: -27rem;
+        width: 64%;
+    }
+
+    .ctn-img2{
+        right: -21rem;
+        width: 60%;
     }
 
     /* footer media query for 1550px */
