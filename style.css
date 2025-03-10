@@ -14,7 +14,7 @@ html {
 }
 
 section {
-    padding-block: 5rem 3rem;
+    padding-block: 5rem 2rem;
     /* background-image: url('Image/Ma4.png'); */
 }
 
@@ -114,7 +114,7 @@ button {
 }
 
 .Delivery {
-    color: rgb(105, 73, 31);
+    color: hsl(230, 62%, 56%);
     position: absolute;
     right: 0;
     top: 0;
@@ -175,7 +175,8 @@ button {
     text-align: center;
     color: rgb(165, 83, 203);
     text-shadow: 1px 0px white;
-    border: 2px dashed rgb(165, 83, 283);
+    border: 2px rgb(165, 83, 283);
+    
 }
 
 .head-co h1 {
@@ -635,6 +636,7 @@ input:focus {
         height: 67%;
     }
 
+    
     .img {
         display: block;
         margin-left: auto;
