@@ -14,7 +14,7 @@ html {
 }
 
 section {
-    padding-block: 5rem 2rem;
+    padding-block: 5rem 1rem;
     /* background-image: url('Image/Ma4.png'); */
 }
 
@@ -54,6 +54,7 @@ button {
     transform: translateY(0px);
     opacity: 1;
 }
+
 
 /* Header Part */
 .header {
@@ -134,12 +135,6 @@ button {
     bottom: 0;
     z-index: -1;
 }
-
-/* .video-btn{
-    position: absolute;
-    left: 0;
-    bottom: 16;
-} */
 
 /* Home section */
 #section-1{
@@ -471,13 +466,11 @@ input:focus {
 .ctn-img1{
     left: -34rem;
     top: 0;
-    width: 18vw;
 }
 
 .ctn-img2{
     right: -28rem;
     bottom: 15px;
-    width: 18vw;
 }
 
 .content .ctn-form {
@@ -707,6 +700,7 @@ input:focus {
         left: 0;
         right: 0;
         width: 100%;
+        justify-content: center;
         background-color: transparent;
         box-shadow: 0 -8px 32px hsla(0, 0%, 0%, .1);
         padding: 10px 5px;
