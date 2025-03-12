@@ -163,6 +163,24 @@ a{
     object-fit: cover;
 }
 
+#zoom-in-out{
+    margin: 100px;
+    animation: zoom-in-zoom-out 5s ease-in-out infinite;
+}
+
+@keyframes zoom-in-zoom-out{
+    0%{
+        transform: scale(1,1);
+    }
+    50%{
+        transform: scale(1.5,1.5);
+    }
+    100%{
+        transform: scale(1,1);
+    }
+}
+
+
 .head-co h2 {
     font-size: 15px;
     max-width: 500px;
@@ -216,8 +234,9 @@ a{
     justify-content: center;
     border-radius: 8px;
     backdrop-filter: blur(30px);
-    background: rgba(198, 138, 138, 0.5);
+    background: transparent;
     border: 1px solid rgba(204, 181, 181, 0.5);
+    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.08);
 }
 
 .menu-order .menu-items .menu-img {
