@@ -32,7 +32,7 @@ a{
     text-decoration: none;
 }
 
-button {
+/* button {
     font-size: 14px;
     background-color: red;
     padding: 12px 26px;
@@ -42,7 +42,7 @@ button {
     border: none;
     cursor: pointer;
     box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.08);
-}
+} */
 
 .reveal {
     transform: translateY(200px);
@@ -246,6 +246,18 @@ button {
     background: whitesmoke;
     border: 1px solid rebeccapurple;
     transition: .5s;
+}
+
+.menu-button{
+    font-size: 14px;
+    background-color: red;
+    padding: 12px 26px;
+    border-radius: 40px;
+    width: auto;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.08);
 }
 
 .menu-order .menu-items .menu-button:hover {
@@ -466,11 +478,13 @@ input:focus {
 .ctn-img1{
     left: -34rem;
     top: 0;
+    width: 28vh;
 }
 
 .ctn-img2{
     right: -28rem;
     bottom: 15px;
+    width: 28vh;
 }
 
 .content .ctn-form {
@@ -482,6 +496,18 @@ input:focus {
 
 .content .ctn-form * {
     margin-bottom: 16px;
+}
+
+.ctn-btn{
+    font-size: 14px;
+    background-color: red;
+    padding: 12px 26px;
+    border-radius: 40px;
+    width: auto;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.08);
 }
 
 .content .ctn-form button {
@@ -658,7 +684,7 @@ input:focus {
         padding-left: 0;
     }
 
-    button {
+    .ctn-btn {
         width: 100%;
     }
 
