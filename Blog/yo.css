@@ -170,8 +170,6 @@ header.shadow .logo{
     font-weight: 600;
     color: var(--text-color);
     display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
