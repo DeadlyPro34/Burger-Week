@@ -99,6 +99,8 @@ header.shadow .logo{
     display: grid;
     justify-content: center;
     align-items: center;
+    background-image: url('Img/bg.jpg');
+    background-repeat: no-repeat;
 }
 
 .home-text{
@@ -245,6 +247,8 @@ footer p{
     width: 100%;
     height: 500px;
     background: var(--container-color);
+    background-image: url('Img/bg.jpg');
+    background-repeat: no-repeat;
 }
 
 .post-container{
