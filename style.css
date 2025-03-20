@@ -315,6 +315,30 @@ a{
     }
 }
 
+/* Services */
+.services__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 4rem;
+}
+
+.services__card{
+    text-align: center;
+}
+
+.services__card i{
+    display: block;
+    font-size: 3rem;
+    color: rgb(205, 132, 132);
+    margin-bottom: 1rem;
+}
+
+.services__title{
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
 /* About Part */
 .banner-container {
     display: grid;
