@@ -4,11 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
+    <link rel="icon" href="Images/cart.png">
     <link rel="stylesheet" href="cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
+
+    <header>
+        <div class="nav container">
+            <!-- logo -->
+            <a href="#" class="logo">Food<span>Cart</span></a>
+            <!-- Home button -->
+            <a href="../index.htm" class="ho">Home</a>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-text container">
+          <h2 class="home-title">Choose Your Fav. Burger's and Snacks😋</h2>
+          <span class="home-subtitle">A dish of fiery flavors stands steaming on the counter, hot and ready to serve, like a tempting promise of satisfaction waiting to be fulfilled.</span>
+        </div>
+      </section>
     
+    <section>
+
+        <h1 data-aos="flip-left" data-aos-duration="1400">New Items Added to Menu😋😋</h1>
+                <div class="menu-sum">
+                    <p data-aos="flip-right" data-aos-duration="1400">Hi! Here you can select the burger, coffee, & fries you like to have. Enjoy your meal!</p>
+        </div>
+        <div class="content swiper">
+            <div class="slider-wrapper">
+                <div class="card-list swiper-wrapper">
+                    <div class="card-item swiper-slide">
+                        <img src="Images/Classic Coffee Regular with Cinammon Spice.png" alt="User Image" class="img">
+                        <h2 class="order-name">Classic coffee</h2>
+                        <button class="msg-button">Add to cart</button>
+                    </div>
+                    <div class="card-item swiper-slide">
+                        <img src="Images/Fries (Large).png" alt="User Image" class="img">
+                        <h2 class="order-name">Classic coffee</h2>
+                        <button class="msg-button">Add to cart</button>
+                    </div>
+                    <div class="card-item swiper-slide">
+                        <img src="Images/Crispy veggie burger.png" alt="User Image" class="img">
+                        <h2 class="order-name">Classic coffee</h2>
+                        <button class="msg-button">Add to cart</button>
+                    </div>
+                    <div class="card-item swiper-slide">
+                        <img src="Images/Iced Coffee with Cinammon Spice.png" alt="User Image" class="img">
+                        <h2 class="order-name">Classic coffee</h2>
+                        <button class="msg-button">Add to cart</button>
+                    </div>
+                    <div class="card-item swiper-slide">
+                        <img src="Images/Veg Pizza McPuff.png" alt="User Image" class="img">
+                        <h2 class="order-name">Classic coffee</h2>
+                        <button class="msg-button">Add to cart</button>
+                    </div>
+                </div>
     
+                <div class="swiper-pagination swiper-pagination-bullet"></div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="cart.js"></script>
 </body>
 </html>
