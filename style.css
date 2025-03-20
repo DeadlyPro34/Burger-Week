@@ -221,51 +221,51 @@ a{
     color: #ff9718;
 }
 
-.menu-order .menu-items {
-    color: white;
-    user-select: none;
-    width: 200px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    backdrop-filter: blur(30px);
-    background: transparent;
-    border: 1px solid rgba(204, 181, 181, 0.5);
-    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.08);
+.order_grid{
+    display: grid;
+    gap: 2rem;
 }
 
-.menu-order .menu-items .menu-img {
-    width: 250px;
-    height: 200px;
-    border-radius: 10%;
-    margin-bottom: 10px;
-    padding: 25px;
-}
-
-.menu-order .menu-items h2 {
-    font-size: 15px;
-    color: black;
+.order_card{
+    padding: 2rem 1rem;
+    border-radius: 1rem;
     text-align: center;
-    font-weight: 500;
-    margin: 10px 0 30px;
+    transition: .3s ease;
 }
 
-.menu-order .menu-items {
-    font-size: 10px;
-    padding: 10px 35px;
-    color: blueviolet;
-    border-radius: 6px;
-    font-weight: 500;
-    cursor: pointer;
-    background: whitesmoke;
-    border: 1px solid rebeccapurple;
-    transition: .5s;
+.order_card:hover{
+    background: rgba(225, 225, 225, 0.5);
+    color: burlywood;
 }
 
-.menu-button{
+.order_card p{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.order_card img{
+    max-width: 250px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+    filter: drop-shadow(10px 10px 30px rgba(0,0,0,0.1));
+}
+
+.order_card p{
+    margin-bottom: 2rem;
+    font-weight: 500;
+    color: rgb(193, 111, 10);
+    line-height: 1.75rem;
+
+}
+
+.order_card h4{
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ff9718;
+}
+
+.btn{
     font-size: 14px;
     background-color: red;
     padding: 12px 26px;
@@ -277,42 +277,10 @@ a{
     box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.08);
 }
 
-.menu-order .menu-items .menu-button:hover {
+.btn:hover {
     background: rgba(225, 225, 225, 0.5);
     border: 1px solid white;
     color: burlywood;
-}
-
-.slider-wrapper {
-    overflow: hidden;
-    max-width: 1110px;
-    margin: 0px 70px 55px;
-}
-
-.swiper-wrapper .swiper-pagination-bullet {
-    background: white;
-    height: 15px;
-    width: 15px;
-}
-
-.slider-wrapper .swiper-slide-button {
-    color: rgb(228, 91, 91);
-    margin-top: -50px;
-    transition: 0.2s ease;
-}
-
-.swiper-slider .swiper-slide-button:hover {
-    color: aquamarine;
-}
-
-@media (max-width: 1150px) {
-    .slider-wrapper {
-        margin: 0 10px 40px;
-    }
-
-    .slider-wrapper .swiper-slide-button {
-        display: none;
-    }
 }
 
 /* Services */
@@ -393,6 +361,10 @@ a{
 }
 
 @media (min-width: 540px) {
+    .order_grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .banner__container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -407,6 +379,10 @@ a{
 }
 
 @media (min-width: 768px) {
+    .order_grid{
+        grid-template-columns: repeat(3,1fr);
+    }
+
     .about-all{
         margin-left: 0.3rem;
     }
@@ -422,6 +398,9 @@ a{
 }
 
 @media (min-width: 1220px) {
+    .order_grid{
+        gap: 2rem;
+    }
     .about-all{
         margin-left: 0.3rem;
     }
@@ -842,10 +821,9 @@ input:focus {
 
 @media (min-width: 1550px) {
 
-    .slider-wrapper {
-        margin: 90px 150px 90px 150px;
+    .order_grid{
+        gap: 2rem;
     }
-
     .foot-ye {
         grid-template-columns: repeat(2, 1fr);
     }
