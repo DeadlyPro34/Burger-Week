@@ -1,8 +1,10 @@
 <html>
 <head>
-    <title>Day3 Task</title>
-    <link rel="stylesheet" href="Da3.css">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap" rel="stylesheet">
+  
 </head>
 <body>
   
@@ -23,12 +25,12 @@
                 <label><input type="checkbox">Remember Me</label>
                 <a href="#">Forgot Password?</a>
             </div>
-            <a href="#">
-                <button onclick="validation()" type="submit" class="btn">Login</button>
-            </a> 
+            <button onclick="validation(); window.location.href='../index.htm';" class="btn" target="_blank">
+                Login
+            </button>            
         </form>
     
-        <script src="Da3.js">
+        <script src="login.js">
 
         </script>
     </div>

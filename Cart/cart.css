@@ -446,6 +446,33 @@ h1 {
     border-radius: 20px;
 }
 
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+footer p{
+    font-size: 1rem;
+}
+
+.social{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.social a{
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.social a:hover{
+    color: var(--second-color);
+    transition: .3s all linear;
+}
+
 /* ==================== Media Queries ==================== */
 
 /* Max-width 1220px */
@@ -568,5 +595,11 @@ h1 {
     .returnCart .list .item img {
         height: 60px;
         width: 60px;
+    }
+    footer{
+        flex-direction: column;
+        row-gap: 1rem;
+        padding: 20px 0;
+        text-align: center;
     }
 }
