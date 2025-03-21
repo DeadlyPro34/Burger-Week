@@ -9,7 +9,7 @@
     <link rel="icon" href="Image/burger.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <title>Burger Week</title>
 </head>
 
@@ -18,7 +18,7 @@
     <header class="header container">
         <nav class="nav shadow-header">
             <a href="#">
-                <img src="Image/Logo.png" style="width: 200px;" data-aos="fade-right" data-aos-duration="1400">
+                <img src="Image/Logo.png" style="width: 200px;" data-aos="fade-right" data-aos-duration="1400" alt="Logo">
             </a>
             <div class="nav__menu">
                 <ul class="nav__list">
@@ -32,28 +32,24 @@
                             <span>Home</span>
                         </a>
                     </li>
-
                     <li class="nav__item">
                         <a href="#section-2" class="nav__link">
                             <i class="ri-book-line"></i>
                             <span>Featured</span>
                         </a>
                     </li>
-
                     <li class="nav__item">
                         <a href="#section-3" class="nav__link">
                             <i class="ri-price-tag-2-line"></i>
                             <span>About Us</span>
                         </a>
                     </li>
-
                     <li class="nav__item">
                         <a href="#section-4" class="nav__link">
                             <i class="ri-bookmark-line"></i>
                             <span>Blog</span>
                         </a>
                     </li>
-
                     <li class="nav__item">
                         <a href="#section-5" class="nav__link">
                             <i class="ri-message-2-line"></i>
@@ -68,20 +64,19 @@
                 <i class="ri-search-line search-button" id="search-button"></i>
 
                 <!-- Login button -->
-                <a href="Login/login.htm">
+                <a href="Login/login.html">
                     <i class="ri-user-line"></i>
                 </a>
             </div>
         </nav>
     </header>
 
-    <!-- Fornt part -->
+    <!-- Front part -->
     <main class="main">
         <section id="section-1" class="container">
-            <video autoplay loop muted palys-inline class="back-video" id="back-video">
+            <video autoplay loop muted playsinline class="back-video" id="back-video">
                 <source src="Image/BurgerDude.mp4" type="video/mp4">
             </video>
-            <!-- <button class="video-btn" onclick="toggleMute()">Toggle Mute</button> -->
             <div class="head-content">
                 <div class="head-co">
                     <h2 data-aos="zoom-in-right" data-aos-duration="1400">Welcome to Burger Week – your ultimate
@@ -90,8 +85,9 @@
                     <h1 data-aos="zoom-in-right" data-aos-duration="1400">Burger<br>Week</h1>
                 </div>
                 <div class="head-bur" id="zoom-in-out">
-                    <img src="Image/MX2.png" data-aos="flip-left" data-aos-duration="1400">
+                    <img src="Image/MX2.png" alt="Burger" data-aos="flip-left" data-aos-duration="1400">
                 </div>
+            </div>
         </section>
 
         <!-- Menu Part -->
@@ -103,56 +99,47 @@
                 </div>
                 <div class="order_grid">
                     <div class="order_card">
-                        <img src="Image/BG1.png" alt="BG1">
+                        <img src="Image/BG1.png" alt="Non-veg Burger">
                         <h4>Non-veg Burger</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, ratione! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, magnam.
-                        </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, ratione!</p>
                         <a href="Cart/cart.html">
                             <button class="btn">Order Now</button>
                         </a>
                     </div>
                     <div class="order_card">
-                        <img src="Image/BG2.png" alt="BG1">
+                        <img src="Image/BG2.png" alt="Veg Burger">
                         <h4>Veg Burger</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, ratione! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, magnam.
-                        </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, ratione!</p>
                         <a href="Cart/cart.html">
                             <button class="btn">Order Now</button>
                         </a>
                     </div>
-
                     <div class="order_card">
-                        <img src="Image/BG3.png" alt="BG1">
-                        <h4>Aloo tika Burger</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, ratione! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, magnam.
-                        </p>
+                        <img src="Image/BG3.png" alt="Aloo Tikka Burger">
+                        <h4>Aloo Tikka Burger</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, ratione!</p>
                         <a href="Cart/cart.html">
                             <button class="btn">Order Now</button>
                         </a>
                     </div>
                 </div>
-            </div>    
+            </div>
         </section>
 
-        <!-- servicess  -->
+        <!-- Services -->
         <section class="services section">
             <div class="reveal">
                 <div class="services__container container grid">
                     <article class="services__card">
                         <i class="ri-truck-line"></i>
-                        <h3 class="services__title">Free Shippping</h3>
+                        <h3 class="services__title">Free Shipping</h3>
                         <p class="services__description">Order More Than Rs300</p>
                     </article>
-    
                     <article class="services__card">
                         <i class="ri-lock-2-line"></i>
                         <h3 class="services__title">Secure Payment</h3>
                         <p class="services__description">100% Secure Payment</p>
                     </article>
-    
                     <article class="services__card">
                         <i class="ri-customer-service-2-line"></i>
                         <h3 class="services__title">24/7 Support</h3>
@@ -160,13 +147,13 @@
                     </article>
                 </div>
             </div>
-         </section>
+        </section>
 
         <!-- About Us -->
         <section class="about container" id="section-3">
             <div class="reveal">
                 <div class="about-content">
-                    <h1 data-aos="flip-left" data-aos-duration="1400">Hello Guys Welcome to Burger house</h1>
+                    <h1 data-aos="flip-left" data-aos-duration="1400">Hello Guys Welcome to Burger House</h1>
                     <p data-aos="flip-right" data-aos-duration="1400">About Burgers and history Special...!!!</p>
                 </div>
                 <div class="about-all banner-container">
@@ -186,7 +173,7 @@
             </div>
         </section>
 
-        <!--Blog Part-->
+        <!-- Blog Part -->
         <section id="section-4" class="container">
             <div class="reveal">
                 <div class="blog-content">
@@ -197,15 +184,10 @@
                         <h1 data-aos="flip-left" data-aos-duration="1400">Discover</h1>
                         <h2 data-aos="flip-right" data-aos-duration="1400">UPCOMING EVENTS</h2>
                         <p data-aos="slide-up" data-aos-duration="1400" data-aos-easing="ease-in-out">
-                            From exclusive burger tastings and chef collaborations to community
-                            outreach initiatives and seasonal celebrations, there's always
-                            something special on the horizon at Burger Company. Be the first to
-                            know about our upcoming events, promotions, and gatherings as we
-                            continue to bring joy and flavor to our cherished customers. Join us
-                            in creating memorable moments and delicious memories together!
+                            From exclusive burger tastings and chef collaborations to community outreach initiatives and seasonal celebrations, there's always something special on the horizon at Burger Company.
                         </p>
-                        <a href="Blog/blog.html"> 
-                            <button class="blog-btn" target="_blank" data-aos="slide-up" data-aos-duration="1400" data-aos-easing="ease-in-out">Blogs</button> 
+                        <a href="Blog/blog.html">
+                            <button class="blog-btn" target="_blank" data-aos="slide-up" data-aos-duration="1400" data-aos-easing="ease-in-out">Blogs</button>
                         </a>
                     </div>
                 </div>
@@ -216,12 +198,8 @@
         <section id="section-5" class="content container">
             <div class="reveal">
                 <div class="ctn-content" data-aos="flip-left" data-aos-duration="1400">
-                    <h2 style="color: red;" class="title">
-                        Have a questions?
-                    </h2>
-                    <p class="subtitle" style="color: #ff9718;">
-                        Leave a message and we will help!
-                    </p>
+                    <h2 style="color: red;" class="title">Have a question?</h2>
+                    <p class="subtitle" style="color: #ff9718;">Leave a message and we will help!</p>
                 </div>
                 <form class="ctn-form">
                     <input type="text" placeholder="Name" required>
@@ -229,7 +207,7 @@
                     <input type="datetime-local" placeholder="Date" required>
                     <input type="email" placeholder="Email" required>
                     <textarea class="feedback-form__message" cols="30" name="text" placeholder="Message" rows="5" required></textarea>
-                        <button class="ctn-btn" id="animateForm">Sumbit</button>
+                    <button class="ctn-btn" id="animateForm">Submit</button>
                 </form>
                 <img src="Image/smallburger.png" alt="small burger" class="ctn-img1">
                 <img src="Image/burgerplate.png" alt="burger plate" class="ctn-img2">
@@ -239,23 +217,21 @@
 
     <!-- Footer Part -->
     <footer class="footer">
-        <img src="Image/Background.png" class="img" data-aos="zoom-in" data-aos-duration="1400">
+        <img src="Image/Background.png" class="img" data-aos="zoom-in" data-aos-duration="1400" alt="Background">
         <div class="foot-ye" data-aos="zoom-in" data-aos-duration="1400">
-            <p>We hope you had a fantastic time exploring new flavors, indulging in delicious burgers, and creating
-                unforgettable memories. Until next time, keep the sizzle alive and stay burgerlicious! 🍔
-            </p>
+            <p>We hope you had a fantastic time exploring new flavors, indulging in delicious burgers, and creating unforgettable memories. Until next time, keep the sizzle alive and stay burgerlicious! 🍔</p>
         </div>
         <div>
             <ul class="foot-yo" data-aos="zoom-in" data-aos-duration="1400">
-                <li><i class="ri-map-pin-fill"></i>RC Road,TUMA,AHMEDBAD</li>
-                <li><i class="ri-mail-fill"></i>burger.house@yahoo.com</li>
+                <li><i class="ri-map-pin-fill"></i> RC Road, TUMA, AHMEDABAD</li>
+                <li><i class="ri-mail-fill"></i> burger.house@yahoo.com</li>
             </ul>
         </div>
         <div class="foot-icons" data-aos="zoom-in" data-aos-duration="1400">
-            <a><i class="ri-facebook-circle-line"></i></a>
-            <a><i class="ri-twitter-x-line"></i></a>
-            <a><i class="ri-instagram-line"></i></a>
-            <a><i class="ri-whatsapp-line"></i></a>
+            <a href="#"><i class="ri-facebook-circle-line"></i></a>
+            <a href="#"><i class="ri-twitter-x-line"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-whatsapp-line"></i></a>
         </div>
         <div class="foot-cpy" data-aos="zoom-in" data-aos-duration="1400">
             <p>© Copyright Owner Burger House Since 2025</p>
@@ -263,7 +239,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
     <script>
