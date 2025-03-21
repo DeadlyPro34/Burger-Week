@@ -26,13 +26,13 @@ const swiper = new Swiper('.slider-wrapper', {
     // Responsive breakpoints
     breakpoints: {
         0: {
-            slidesPerView: 1 // Corrected typo here
+            slidesPerView: 1 
         },
         620: {
-            slidesPerView: 2 // Corrected typo here
+            slidesPerView: 2 
         },
         1024: {
-            slidesPerView: 3 // Corrected typo here
+            slidesPerView: 3 
         }
     }
 });
@@ -47,18 +47,18 @@ iconCart.addEventListener('click', function () {
     if (cart.style.right == '-100%' || cart.style.right == '') {
         cart.style.right = '0';
         container.style.transform = 'translateX(-400px)';
-        sliderWrapper.classList.add('hide-slider'); // Hide Swiper when cart opens
+        sliderWrapper.classList.add('hide-slider'); 
     } else {
         cart.style.right = '-100%';
         container.style.transform = 'translateX(0)';
-        sliderWrapper.classList.remove('hide-slider'); // Show Swiper when cart closes
+        sliderWrapper.classList.remove('hide-slider'); 
     }
 });
 
 close.addEventListener('click', function () {
     cart.style.right = '-100%';
     container.style.transform = 'translateX(0)';
-    sliderWrapper.classList.remove('hide-slider'); // Show Swiper when cart closes
+    sliderWrapper.classList.remove('hide-slider'); 
 });
 
 
