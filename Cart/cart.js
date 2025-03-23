@@ -63,38 +63,83 @@ close.addEventListener('click', function () {
 
 
 
-let products = null;
-// get data from file json
-fetch('product.json')
-    .then(response => response.json())
-    .then(data => {
-        products = data;
-        addDataToHTML();
-})
+// Directly initializing the product data
+let products = [
+    {
+        "id": 1,
+        "name": "Gourmet Bacon Cheeseburger",
+        "price": 520,
+        "image": "./Images/BG1.png"
+    },
+    {
+        "id": 2,
+        "name": "Classic Cheeseburger with Ketchup & Cheese",
+        "price": 220,
+        "image": "./Images/BG2.png"
+    },
+    {
+        "id": 3,
+        "name": "Gourmet Bacon Cheeseburger",
+        "price": 250,
+        "image": "./Images/BG3.png"
+    },
+    {
+        "id": 4,
+        "name": "McCafé Frappe",
+        "price": 420,
+        "image": "./Images/BG4.png"
+    },
+    {
+        "id": 5,
+        "name": "Chicken Sandwich Combo",
+        "price": 120,
+        "image": "./Images/BG5.png"
+    },
+    {
+        "id": 6,
+        "name": "McDonald's French Fries",
+        "price": 120,
+        "image": "./Images/BG6.png"
+    },
+    {
+        "id": 7,
+        "name": "McCafé Iced Coffee",
+        "price": 120,
+        "image": "./Images/BG7.png"
+    },
+    {
+        "id": 8,
+        "name": "McDonald's Spicy Veggie Pocket / Pie",
+        "price": 120,
+        "image": "./Images/BG8.png"
+    }
+];
 
-//show datas product in list 
-function addDataToHTML(){
-    // remove datas default from HTML
+// Call the function to populate the HTML
+addDataToHTML();
+
+// Function to display products in the list
+function addDataToHTML() {
+    // Remove default data from HTML
     let listProductHTML = document.querySelector('.listProduct');
     listProductHTML.innerHTML = '';
 
-    // add new datas
-    if(products != null) // if has data
-    {
+    // Add new data to HTML
+    if (products != null) { // Check if there is product data
         products.forEach(product => {
             let newProduct = document.createElement('div');
             newProduct.classList.add('item');
             newProduct.innerHTML = 
-            `<img src="${product.image}" alt="">
-            <h2>${product.name}</h2>
-            <div class="price">$${product.price}</div>
-            <button onclick="addCart(${product.id})">Add To Cart</button>`;
+                `<img src="${product.image}" alt="">
+                <h2>${product.name}</h2>
+                <div class="price">$${product.price}</div>
+                <button onclick="addCart(${product.id})">Add To Cart</button>`;
 
             listProductHTML.appendChild(newProduct);
-
         });
     }
 }
+
 
 //use cookie so the cart doesn't get lost on refresh page
 let listCart = [];
