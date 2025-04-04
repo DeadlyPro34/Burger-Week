@@ -336,9 +336,9 @@ h1 {
 
 /* Cart Image */
 .cart .listCart img {
-    width: 100%;
+    width: 144%;
     height: 70px;
-    object-fit: cover;
+    object-fit: scale-down;
     border-radius: 10px;
 }
 
