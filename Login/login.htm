@@ -9,16 +9,16 @@
 <body>
   
     <div class="wrapper">
-        <form action="">
+        <form method="post" action="/post">
             <h1>Validation</h1>
             <div class="input-box">
-                <input type="text" id="uname" placeholder="Username">
+                <input type="text" id="uname" placeholder="Username" name="name" required>
                 <i class='bx bxs-user'></i>
  
-                <input type="email" id="email" placeholder="E-mail">
+                <input type="email" id="email" placeholder="E-mail" name="email" required>
                 <i class='bx bxs-user'></i>
 
-                <input type="password" id="pass" placeholder="Password">
+                <input type="password" id="pass" placeholder="Password" name="password" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
             <div class="remember-forgot">
@@ -31,8 +31,8 @@
         </form>
     
         <script src="login.js">
-
         </script>
+        <script src="server.js"></script>
     </div>
   </div>
 </body>
