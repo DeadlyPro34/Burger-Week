@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-const port = 3018; // Choose one port for simplicity
+const port = 3018; // Specify port
 
 const app = express();
 app.use(express.static(__dirname));
@@ -11,17 +11,25 @@ app.use(express.urlencoded({ extended: true }));
 mongoose.connect('mongodb://localhost:27017/customer', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.on('error', (error) => {
+    console.error('MongoDB connection error:', error);
+}); // Use a callback for better error handling
+
 db.once('open', () => {
     console.log('MongoDB Connection Successful');
 });
 
 // Creating a database schema and model
 const userSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    password: String
-});
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    password: { type: String, required: true },
+    uname: String,
+    untime: String,
+    upassword: String,
+    uemail: String,
+    uaddress: String,
+}); // Added required properties for validation
 
 const Users = mongoose.model('data', userSchema);
 
@@ -38,12 +46,24 @@ app.get('/login', (req, res) => {
 // Common POST route for form submissions
 app.post('/post', async (req, res) => {
     try {
-        const { name, email, password } = req.body;
+        const { name, email, password, uname, untime, upassword, uemail, uaddress } = req.body;
+
+        if (!name || !email || !password) {
+            // Server-side validation for required fields
+            return res.status(400).send('Name, email, and password are required!');
+        }
+
         const user = new Users({
             name,
             email,
-            password
+            password,
+            uname,
+            untime,
+            upassword,
+            uemail,
+            uaddress,
         });
+
         await user.save();
         console.log(user);
         res.send('Form Submission Successful');
@@ -54,5 +74,5 @@ app.post('/post', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log('Server started on port', port);
+    console.log(`Server started on port ${port}`); // Improved log formatting
 });

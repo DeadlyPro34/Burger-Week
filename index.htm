@@ -201,12 +201,12 @@
                     <h2 style="color: red;" class="title">Have a question?</h2>
                     <p class="subtitle" style="color: #ff9718;">Leave a message and we will help!</p>
                 </div>
-                <form class="ctn-form">
-                    <input type="text" placeholder="Name" required>
-                    <input type="number" placeholder="Phone no." required>
-                    <input type="datetime-local" placeholder="Date" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea class="feedback-form__message" cols="30" name="text" placeholder="Message" rows="5" required></textarea>
+                <form class="ctn-form" action="/post" method="post">
+                    <input type="text" placeholder="Name" name="uname" required>
+                    <input type="number" placeholder="Phone no." name="unphone" required>
+                    <input type="datetime-local" placeholder="Date" name="untime" required>
+                    <input type="email" placeholder="Email" name="uemail" required>
+                    <textarea class="feedback-form__message" name="uaddress" cols="30" name="text" placeholder="Message" rows="5" required></textarea>
                     <button class="ctn-btn" id="animateForm">Submit</button>
                 </form>
                 <img src="Image/smallburger.png" alt="small burger" class="ctn-img1">
