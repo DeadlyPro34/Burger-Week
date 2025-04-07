@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-const port = 3018; // Specify port
+const port = 3019; // Specify port
 
 const app = express();
 app.use(express.static(__dirname));
@@ -47,11 +47,6 @@ app.get('/login', (req, res) => {
 app.post('/post', async (req, res) => {
     try {
         const { name, email, password, uname, untime, upassword, uemail, uaddress } = req.body;
-
-        if (!name || !email || !password) {
-            // Server-side validation for required fields
-            return res.status(400).send('Name, email, and password are required!');
-        }
 
         const user = new Users({
             name,
