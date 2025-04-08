@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-const port = 3019; // Specify port
 
+const port = 3018; // Specify port
 const app = express();
 app.use(express.static(__dirname));
 app.use(express.urlencoded({ extended: true }));
@@ -10,7 +10,6 @@ app.use(express.urlencoded({ extended: true }));
 // Connecting MongoDB
 mongoose.connect('mongodb://localhost:27017/customer', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
-
 db.on('error', (error) => {
     console.error('MongoDB connection error:', error);
 }); // Use a callback for better error handling
@@ -19,8 +18,8 @@ db.once('open', () => {
     console.log('MongoDB Connection Successful');
 });
 
-// Creating a database schema and model
 const userSchema = new mongoose.Schema({
+
     name: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
@@ -47,6 +46,11 @@ app.get('/login', (req, res) => {
 app.post('/post', async (req, res) => {
     try {
         const { name, email, password, uname, untime, upassword, uemail, uaddress } = req.body;
+
+        if (!name || !email || !password) {
+            // Server-side validation for required fields
+            return res.status(400).send('Name, email, and password are required!');
+        }
 
         const user = new Users({
             name,
