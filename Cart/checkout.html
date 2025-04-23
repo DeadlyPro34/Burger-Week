@@ -10,56 +10,50 @@
 <body>
     <div class="container">
         <div class="checkoutLayout">
-            <div class="returnCart">
-                <a href="cart.html">keep shopping</a>
-                <h1>List Product in Cart</h1>
-                <div class="list">
-                    <div class="item">
-                        <img src="Images/BG1.png">
-                        <div class="info">
-                            <div class="name">PRODUCT 1</div>
-                            <div class="price">$22/1 product</div>
-                        </div>
-                        <div class="quantity">5</div>
-                        <div class="returnPrice">$433.3</div>
-                    </div>
-                </div>
+          <div class="returnCart">
+            <a href="cart.html">keep shopping</a>
+            <h1>List Product in Cart</h1>
+            <div class="list">
+              <!-- ... -->
             </div>
-
-            <div class="right">
-                <h1>Checkout</h1>
-                <div class="form">
-                    <div class="group">
-                        <label for="name">Full Name</label>
-                        <input type="text" name="name" id="name">
-                    </div>
-                    <div class="group">
-                        <label for="phone">Phone Number</label>
-                        <input type="text" name="phone" id="phone">
-                    </div>
-
-                    <div class="group">
-                        <label for="address">Address</label>
-                        <input type="text" name="address" id="address">
-                    </div>
-                    <div class="group">
-                        <label for="country">Country</label>
-                        <select name="country" id="country">
-                            <option value="">Choose..</option>
-                            <option value="">India</option>
-                        </select>
-                    </div>
-                    <div class="group">
-                        <label for="city">City</label>
-                        <select name="city" id="city">
-                            <option value="">Choose..</option>
-                            <option value="">Ahmedabad</option>
-                            <option value="">Gandhinagar</option>
-                            <option value="">Surat</option>
-                            <option value="">Vadodara</option>
-                        </select>
-                    </div>
-                </div>
+          </div>
+    
+          <div class="right">
+            <h1>Checkout</h1>
+            <!-- Add onsubmit here -->
+            <form class="form" id="checkoutForm" onsubmit="return validateCheckout()">
+              <div class="group">
+                <label for="fullname">Full Name</label>
+                <input type="text" name="fullname" id="fullname" required>
+              </div>
+              <div class="group">
+                <label for="phone">Phone Number</label>
+                <input type="text" name="phone" id="phone" required>
+              </div>
+              <div class="group">
+                <label for="address">Address</label>
+                <input type="text" name="address" id="address" required>
+              </div>
+              <div class="group">
+                <label for="country">Country</label>
+                <select name="country" id="country" required>
+                  <option value="">Choose..</option>
+                  <option>India</option>
+                </select>
+              </div>
+              <div class="group">
+                <label for="city">City</label>
+                <select name="city" id="city" required>
+                  <option value="">Choose..</option>
+                  <option>Ahmedabad</option>
+                  <option>Gandhinagar</option>
+                  <option>Surat</option>
+                  <option>Vadodara</option>
+                </select>
+              </div>
+    
+              <div class="return">
+                <!-- totals -->
                 <div class="return">
                     <div class="row">
                         <div>Total Quantity</div>
@@ -70,10 +64,12 @@
                         <div class="totalPrice">$900</div>
                     </div>
                 </div>
-                <button class="buttonCheckout">CHECKOUT</button>
-            </div>
+              </div>
+              <button type="submit" class="buttonCheckout">CHECKOUT</button>
+            </form>
+          </div>
         </div>
-    </div>
+      </div>
 
     
     <script src="checkout.js"></script>
