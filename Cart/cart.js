@@ -152,6 +152,7 @@ function addCartToHTML(){
     }
     totalHTML.innerText = totalQuantity;
 }
+
 function changeQuantity($idProduct, $type){
     switch ($type) {
         case '+':

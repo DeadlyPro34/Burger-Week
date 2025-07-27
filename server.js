@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
     untime: String,
     upassword: String,
     uemail: String,
-    uaddress: String,
+    uaddress: String
 }); // Added required properties for validation
 
 const Users = mongoose.model('data', userSchema);
