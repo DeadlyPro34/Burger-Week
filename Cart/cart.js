@@ -42,15 +42,17 @@ let cart = document.querySelector('.cart');
 let container = document.querySelector('.container');
 let close = document.querySelector('.close');
 
-iconCart.addEventListener('click', function(){
-    if(cart.style.right == '-100%'){
-        cart.style.right = '0';
-        container.style.transform = 'translateX(-400px)';
-    }else{
-        cart.style.right = '-100%';
-        container.style.transform = 'translateX(0)';
-    }
-})
+if (iconCart) {
+    iconCart.addEventListener('click', function(){
+        if(cart.style.right == '0px'){
+            cart.style.right = '-100%';
+            container.style.transform = 'translateX(0)';
+        }else{
+            cart.style.right = '0';
+            container.style.transform = 'translateX(-400px)';
+        }
+    });
+}
 close.addEventListener('click', function (){
     cart.style.right = '-100%';
     container.style.transform = 'translateX(0)';
@@ -79,9 +81,9 @@ function addDataToHTML(){
             let newProduct = document.createElement('div');
             newProduct.classList.add('item');
             newProduct.innerHTML = 
-            `<img src="${product.image}" alt="">
+            `<img src="${product.image.toLowerCase().replace('./images/', 'images/')}" alt="">
             <h2>${product.name}</h2>
-            <div class="price">$${product.price}</div>
+            <div class="price">Rs${product.price}</div>
             <button onclick="addCart(${product.id})">Add To Cart</button>`;
 
             listProductHTML.appendChild(newProduct);
@@ -89,16 +91,14 @@ function addDataToHTML(){
         });
     }
 }
-//use cookie so the cart doesn't get lost on refresh page
+//use localStorage so the cart doesn't get lost on refresh page
 
 
 let listCart = [];
 function checkCart(){
-    var cookieValue = document.cookie
-    .split('; ')
-    .find(row => row.startsWith('listCart='));
-    if(cookieValue){
-        listCart = JSON.parse(cookieValue.split('=')[1]);
+    const savedCart = localStorage.getItem('listCart');
+    if(savedCart){
+        listCart = JSON.parse(savedCart);
     }else{
         listCart = [];
     }
@@ -116,7 +116,7 @@ function addCart($idProduct){
         //I just increased the quantity
         listCart[$idProduct].quantity++;
     }
-    document.cookie = "listCart=" + JSON.stringify(listCart) + "; expires=Thu, 31 Dec 2025 23:59:59 UTC; path=/;";
+    localStorage.setItem('listCart', JSON.stringify(listCart));
 
     addCartToHTML();
 }
@@ -135,10 +135,10 @@ function addCartToHTML(){
                 let newCart = document.createElement('div');
                 newCart.classList.add('item');
                 newCart.innerHTML = 
-                    `<img src="${product.image}">
+                    `<img src="${product.image.toLowerCase().replace('./images/', 'images/')}">
                     <div class="content">
                         <div class="name">${product.name}</div>
-                        <div class="price">$${product.price} / 1 product</div>
+                        <div class="price">Rs${product.price} / 1 product</div>
                     </div>
                     <div class="quantity">
                         <button onclick="changeQuantity(${product.id}, '-')">-</button>
@@ -170,8 +170,8 @@ function changeQuantity($idProduct, $type){
         default:
             break;
     }
-    // save new data in cookie
-    document.cookie = "listCart=" + JSON.stringify(listCart) + "; expires=Thu, 31 Dec 2025 23:59:59 UTC; path=/;";
+    // save new data in localStorage
+    localStorage.setItem('listCart', JSON.stringify(listCart));
     // reload html view cart
     addCartToHTML();
 }

@@ -296,13 +296,16 @@ h1 {
     width: 400px;
     max-width: 80vw;
     height: 100vh;
-    background-color: #0E0F11;
+    background-color: rgba(14, 15, 17, 0.95); /* Semi-transparent */
+    backdrop-filter: blur(10px); /* Glass effect */
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
     top: 0;
     right: -100%;
     display: grid;
-    grid-template-rows: 50px 1fr 50px;
+    grid-template-rows: 80px 1fr 80px;
     gap: 20px;
-    transition: right 1s;
+    z-index: 1000;
+    transition: right 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .cart .buttons .checkout {
