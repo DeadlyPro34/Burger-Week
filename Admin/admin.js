@@ -42,7 +42,8 @@ function renderOrders(orders) {
             <td>${date}</td>
             <td>
                 <strong>${order.customerName || 'Anonymous'}</strong><br>
-                <small>${order.phone || 'No phone'}</small>
+                <small>${order.phone || 'No phone'}</small><br>
+                <small style="color:var(--primary-color)">${order.paymentId ? 'Txn: ' + order.paymentId : 'Cash'}</small>
             </td>
             <td>${items}</td>
             <td>₹${order.totalAmount || 0}</td>
