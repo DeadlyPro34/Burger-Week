@@ -1,11 +1,11 @@
 let listCart = [];
 function checkCart(){
-        var cookieValue = document.cookie
-        .split('; ')
-        .find(row => row.startsWith('listCart='));
-        if(cookieValue){
-            listCart = JSON.parse(cookieValue.split('=')[1]);
-        }
+    const savedCart = localStorage.getItem('listCart');
+    if(savedCart){
+        listCart = JSON.parse(savedCart);
+    } else {
+        listCart = [];
+    }
 }
 checkCart();
 addCartToHTML();
@@ -25,13 +25,13 @@ function addCartToHTML(){
                 let newCart = document.createElement('div');
                 newCart.classList.add('item');
                 newCart.innerHTML = 
-                    `<img src="${product.image}">
+                    `<img src="${product.image.toLowerCase().replace('./images/', 'images/')}">
                     <div class="info">
                         <div class="name">${product.name}</div>
-                        <div class="price">$${product.price}/1 product</div>
+                        <div class="price">Rs${product.price}/1 product</div>
                     </div>
                     <div class="quantity">${product.quantity}</div>
-                    <div class="returnPrice">$${product.price * product.quantity}</div>`;
+                    <div class="returnPrice">Rs${product.price * product.quantity}</div>`;
                 listCartHTML.appendChild(newCart);
                 totalQuantity = totalQuantity + product.quantity;
                 totalPrice = totalPrice + (product.price * product.quantity);
@@ -75,6 +75,31 @@ function validateCheckout() {
       return false;
     }
 
-    // All good
-    return true;
+    // SEND TO BACKEND
+    const orderData = {
+        customerName: name,
+        phone: phone,
+        address: address,
+        city: city,
+        items: listCart.filter(item => item !== null),
+        totalAmount: document.querySelector('.totalPrice').innerText.replace('Rs', '')
+    };
+
+    fetch('/api/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(orderData)
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.success){
+            alert('Order Placed Successfully! We will contact you soon.');
+            localStorage.removeItem('listCart');
+            window.location.href = '../index.htm';
+        } else {
+            alert('Something went wrong. Please try again.');
+        }
+    });
+
+    return false; // Prevent default form submission
 }
