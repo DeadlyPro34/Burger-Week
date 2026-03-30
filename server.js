@@ -42,6 +42,7 @@ const orderSchema = new mongoose.Schema({
     city: String,
     items: Array,
     totalAmount: Number,
+    paymentId: { type: String, default: 'Cash' },
     status: { type: String, default: 'Pending' },
     orderDate: { type: Date, default: Date.now }
 });
