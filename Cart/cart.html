@@ -76,6 +76,17 @@
                 <div class="menu-sum">
                     <p>Hi! Here you can select the burger, coffee, & fries you like to have. Enjoy your meal!</p>
                  </div>
+                 
+        <div class="search-filter-container container" style="margin-bottom: 30px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; max-width: 800px;">
+            <input type="text" id="searchInput" placeholder="Search for burgers, fries, drinks..." onkeyup="filterMenu()" style="flex: 2; padding: 14px 20px; border-radius: 50px; border: 2px solid #ff9718; font-size: 1rem; outline: none; box-shadow: 0 4px 15px rgba(255, 151, 24, 0.1);">
+            <select id="dietaryFilter" onchange="filterMenu()" style="flex: 1; min-width: 150px; padding: 14px 20px; border-radius: 50px; border: 2px solid #ff9718; font-size: 1rem; outline: none; background: #fff; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 151, 24, 0.1);">
+                <option value="all">🍽️ All Items</option>
+                <option value="veg">🥬 Vegetarian</option>
+                <option value="nonveg">🍗 Non-Vegetarian</option>
+                <option value="beverage">☕ Beverages</option>
+            </select>
+        </div>
+
         <div class="listProduct">
             <div class="item">
                 <img src="Images/BG1.png" alt="Burger 1">

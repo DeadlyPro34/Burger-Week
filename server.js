@@ -37,6 +37,7 @@ const Users = mongoose.model('users', userSchema);
 // ORDER SCHEMA
 const orderSchema = new mongoose.Schema({
     customerName: String,
+    email: { type: String, default: 'No email' },
     phone: String,
     address: String,
     city: String,
@@ -136,6 +137,33 @@ app.post('/api/orders', async (req, res) => {
     try {
         const order = new Orders(req.body);
         await order.save();
+        
+        // Send Email Notification Safely
+        try {
+            const nodemailer = require('nodemailer');
+            if (process.env.EMAIL_USER && process.env.EMAIL_PASS && order.email) {
+                const transporter = nodemailer.createTransport({
+                    service: 'gmail',
+                    auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS }
+                });
+                const mailOptions = {
+                    from: `"Burger House" <${process.env.EMAIL_USER}>`,
+                    to: order.email,
+                    subject: '🍔 Burger House - Order Confirmed!',
+                    html: `<h2>Order Successfully Placed!</h2>
+                           <p>Hi <b>${order.customerName}</b>,</p>
+                           <p>Your payment (Transaction ID: <b>${order.paymentId}</b>) has been successfully verified.</p>
+                           <p><b>Total Paid:</b> ₹${order.totalAmount}</p>
+                           <br />
+                           <p>We are preparing your delicious meal right now. It will be delivered to <b>${order.address}, ${order.city}</b> shortly.</p>
+                           <p>Stay Burgerlicious!<br>- The Burger House Team</p>`
+                };
+                transporter.sendMail(mailOptions).catch(err => console.log('Mail drop error:', err));
+            }
+        } catch (mailError) {
+            console.log("Email skipped: Nodemailer not installed or env missing.");
+        }
+
         res.json({ success: true, message: 'Order placed successfully!' });
     } catch (error) {
         res.status(500).json({ success: false, message: 'Ordering failed.' });

@@ -17,6 +17,8 @@
 -   **⚙️ Kitchen Admin Dashboard**: A premium, secure control panel for staff to manage orders via live data streaming and direct database manipulation.
 -   **🍔 Dynamic Menu Management**: Complete CRUD capability directly through the Admin Portal, automatically mapping items directly to the live User Cart without touching code.
 -   **📝 MongoDB Blog Engine**: Fully integrated dynamic blogging system allowing staff to publish rich-text articles directly to the live `Blog` component.
+-   **🔍 Advanced Search & Filters**: Intelligent frontend menu system allowing users to search instantly by item mapping alongside a smart categorizer filtering (Veg / Non-Veg / Beverages).
+-   **📧 Automated E-mail Notifications**: Real-time NodeMailer pipeline instantly dispatching full-receipt email breakdowns verifying order tracking securely to users immediately upon checkout.
 -   **🚀 Performance Focused**: Optimized scroll-reveal animations (AOS), smart navigation tracking, and a dynamic scroll progress bar.
 -   **📬 Inquiry Management**: A dedicated contact system allows users to send messages directly to the kitchen, stored safely in the database.
 -   **📱 Fully Responsive**: Crafted with modern CSS techniques to ensure a stunning immersive experience on mobile, tablet, and desktop.
@@ -105,8 +107,8 @@ Burger Week/
 -   [x] **Dynamic Inventory**: Live Cart item creation and deletion.
 -   [x] **Blog CMS**: Integrated publishing system.
 -   [x] **Payment Integration**: Secure checkout with Razorpay SDK integration.
--   [ ] **Email Notifications**: Automated order confirmation emails.
--   [ ] **Search & Filters**: Advanced dish search and dietary filtering.
+-   [x] **Email Notifications**: Automated order confirmation emails via NodeMailer.
+-   [x] **Search & Filters**: Advanced dish search and dietary filtering on Cart module.
 
 ---
 

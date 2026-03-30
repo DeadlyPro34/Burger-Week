@@ -70,14 +70,45 @@ fetch('product.json')
 
 //show datas product in list 
 function addDataToHTML(){
-    // remove datas default from HTML
+    renderListProduct(products);
+}
+
+function filterMenu() {
+    if (!products) return;
+
+    const searchText = document.getElementById('searchInput').value.toLowerCase();
+    const filter = document.getElementById('dietaryFilter').value;
+
+    const filteredProducts = products.filter(product => {
+        const nameLower = product.name.toLowerCase();
+        
+        // Advanced Text Search
+        if (searchText && !nameLower.includes(searchText)) return false;
+
+        // Dietary Category Filtering Mechanism (Smart Keywords)
+        const isNonVeg = ['chicken', 'bacon', 'beef', 'meat', 'fish'].some(word => nameLower.includes(word));
+        const isBeverage = ['coffee', 'frappe', 'drink', 'cola', 'tea', 'shake', 'beverage'].some(word => nameLower.includes(word));
+
+        if (filter === 'veg') {
+            if (isNonVeg || isBeverage) return false;
+        } else if (filter === 'nonveg') {
+            if (!isNonVeg) return false;
+        } else if (filter === 'beverage') {
+            if (!isBeverage) return false;
+        }
+
+        return true;
+    });
+
+    renderListProduct(filteredProducts);
+}
+
+function renderListProduct(itemsToRender) {
     let listProductHTML = document.querySelector('.listProduct');
     listProductHTML.innerHTML = '';
 
-    // add new datas
-    if(products != null) // if has data
-    {
-        products.forEach(product => {
+    if(itemsToRender && itemsToRender.length > 0) {
+        itemsToRender.forEach(product => {
             let newProduct = document.createElement('div');
             newProduct.classList.add('item');
             newProduct.innerHTML = 
@@ -87,8 +118,9 @@ function addDataToHTML(){
             <button onclick="addCart(${product.id})">Add To Cart</button>`;
 
             listProductHTML.appendChild(newProduct);
-
         });
+    } else {
+        listProductHTML.innerHTML = `<h2 style="width: 100%; text-align: center; color: #888; margin-top: 2rem; grid-column: 1/-1;">No items found matching your search! 🍔</h2>`;
     }
 }
 //use localStorage so the cart doesn't get lost on refresh page

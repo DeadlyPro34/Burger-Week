@@ -44,6 +44,7 @@ function addCartToHTML(){
 
 function validateCheckout() {
     const name = document.getElementById('fullname').value.trim();
+    const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const address = document.getElementById('address').value.trim();
     const country = document.getElementById('country').value;
@@ -54,8 +55,14 @@ function validateCheckout() {
     // Phone: digits only, 10–15 chars
     const phonePattern = /^\d{10,15}$/;
 
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+[.][a-zA-Z]{2,10}$/;
+
     if (!namePattern.test(name)) {
       alert('Full name should contain letters and spaces only.');
+      return false;
+    }
+    if (!emailPattern.test(email)) {
+      alert('Please enter a valid email address.');
       return false;
     }
     if (!phonePattern.test(phone)) {
@@ -95,6 +102,7 @@ function validateCheckout() {
             // Once payment succeeds via Razorpay window, proceed to hit our MongoDB Server!
             const orderData = {
                 customerName: name,
+                email: email,
                 phone: phone,
                 address: address,
                 city: city,
@@ -121,6 +129,7 @@ function validateCheckout() {
         },
         "prefill": {
             "name": name,
+            "email": email,
             "contact": phone
         },
         "theme": {
