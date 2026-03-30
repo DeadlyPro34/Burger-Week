@@ -6,9 +6,11 @@
     list-style: none;
 }
 
-html {
+html, body {
     scroll-behavior: smooth;
     scroll-padding: -25rem;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 section {
