@@ -12,10 +12,13 @@
 
 -   **📽️ Dynamic Hero Experience**: Immersive video background with mouse-parallax animations for interactive burger elements.
 -   **🔐 Secure Authentication**: Full user registration and login system using **JWT** (JSON Web Tokens) and **bcrypt** for password hashing.
--   **🛒 Real-time Ordering**: Seamless menu browsing with a functional shopping cart and order persistence in **MongoDB**.
+-   **🛒 Real-time Ordering**: Seamless menu browsing with a functional shopping cart and order persistence natively through **product.json** mapping.
+-   **⚙️ Kitchen Admin Dashboard**: A premium, secure control panel for staff to manage orders via live data streaming and direct database manipulation.
+-   **🍔 Dynamic Menu Management**: Complete CRUD capability directly through the Admin Portal, automatically mapping items directly to the live User Cart without touching code.
+-   **📝 MongoDB Blog Engine**: Fully integrated dynamic blogging system allowing staff to publish rich-text articles directly to the live `Blog` component.
 -   **🚀 Performance Focused**: Optimized scroll-reveal animations (AOS), smart navigation tracking, and a dynamic scroll progress bar.
 -   **📬 Inquiry Management**: A dedicated contact system allows users to send messages directly to the kitchen, stored safely in the database.
--   **📱 Fully Responsive**: Crafted with modern CSS techniques to ensure a stunning experience on mobile, tablet, and desktop.
+-   **📱 Fully Responsive**: Crafted with modern CSS techniques to ensure a stunning immersive experience on mobile, tablet, and desktop.
 
 ---
 
@@ -80,8 +83,9 @@
 
 ```text
 Burger Week/
-├── 📁 Blog/          # Blog page resources
-├── 📁 Cart/          # Shopping cart logic and UI
+├── 📁 Admin/         # Secure Kitchen Dashboard & Menu management
+├── 📁 Blog/          # Dynamic MongoDB-driven Blog layouts
+├── 📁 Cart/          # Shopping cart logic and JSON Datastore
 ├── 📁 Image/         # Optimized assets and videos
 ├── 📁 Login/         # Authentication pages
 ├── index.htm        # Main entry point (Frontend)
@@ -96,7 +100,9 @@ Burger Week/
 
 ## 🛤️ Future Roadmap
 
--   [ ] **Admin Dashboard**: Real-time order management for kitchen staff.
+-   [x] **Admin Dashboard**: Real-time order management for kitchen staff.
+-   [x] **Dynamic Inventory**: Live Cart item creation and deletion.
+-   [x] **Blog CMS**: Integrated publishing system.
 -   [ ] **Payment Integration**: Secure checkout with Stripe or Razorpay.
 -   [ ] **Email Notifications**: Automated order confirmation emails.
 -   [ ] **Search & Filters**: Advanced dish search and dietary filtering.
