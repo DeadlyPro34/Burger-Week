@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger House | Admin Dashboard</title>
+    <link rel="stylesheet" href="/Admin/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <link rel="icon" href="/Image/burger.png">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="/Image/Logo.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><i class="ri-dashboard-line"></i> Dashboard</li>
+                    <li onclick="window.location.href='/'"><i class="ri-home-4-line"></i> View Main Site</li>
+                    <li onclick="logout()"><i class="ri-logout-box-r-line"></i> Logout</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header class="admin-header">
+                <h1>🍽️ Kitchen Dashboard</h1>
+                <div class="stats">
+                    <div class="stat-card">
+                        <span id="total-orders">0</span>
+                        <p>Total Orders</p>
+                    </div>
+                    <div class="stat-card pending">
+                        <span id="pending-orders">0</span>
+                        <p>Pending</p>
+                    </div>
+                </div>
+            </header>
+
+            <section class="order-list">
+                <div class="list-header">
+                    <h2>Recent Orders</h2>
+                    <button class="refresh-btn" onclick="fetchOrders()"><i class="ri-refresh-line"></i> Refresh</button>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Customer</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-body">
+                            <!-- Orders will be injected here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- New Menu Item Form -->
+            <section class="order-list" style="margin-top: 3rem;">
+                <div class="list-header" style="margin-bottom: 1.5rem;">
+                    <h2>🍕 Add New Menu Item</h2>
+                </div>
+                <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">Items added here will be automatically sent to the Cart system for users to purchase.</p>
+                <form id="addMenuForm" onsubmit="addMenuItem(event)" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <input type="text" id="menuName" placeholder="Food Name (e.g. Double Cheese Burger)" required style="flex: 2; padding: 14px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--glass-bg); color: var(--text-white); font-size: 1rem; outline: none;">
+                    <input type="number" id="menuPrice" placeholder="Price (₹)" required style="flex: 1; padding: 14px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--glass-bg); color: var(--text-white); font-size: 1rem; outline: none;">
+                    <input type="text" id="menuImage" placeholder="Image URL (e.g. ./Images/BG1.png)" required style="flex: 2; padding: 14px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--glass-bg); color: var(--text-white); font-size: 1rem; outline: none;">
+                    <button type="submit" class="refresh-btn" style="background: var(--primary-color); color: #000; padding: 0 24px; font-weight: 800;">Add Food +</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast"></div>
+
+    <script src="/Admin/admin.js"></script>
+</body>
+</html>

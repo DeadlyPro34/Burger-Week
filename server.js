@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const fs = require('fs');
 const bcrypt = require('bcryptjs'); // Will be available after user installs
 const jwt = require('jsonwebtoken'); // Will be available after user installs
 const cookieParser = require('cookie-parser');
@@ -59,8 +60,10 @@ const Inquiries = mongoose.model('inquiries', inquirySchema);
 
 // --- ROUTES ---
 
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.htm')));
 app.get('/index', (req, res) => res.sendFile(path.join(__dirname, 'index.htm')));
 app.get('/login', (req, res) => res.sendFile(path.join(__dirname, 'Login/login.htm')));
+app.get(['/admin', '/admin/'], (req, res) => res.sendFile(path.join(__dirname, 'Admin/admin.htm')));
 
 // Handle Contact Form submissions
 app.post('/post', async (req, res) => {
@@ -106,7 +109,16 @@ app.post('/api/login', async (req, res) => {
     }
 });
 
-// New Order API
+// Order APIs
+app.get('/api/orders', async (req, res) => {
+    try {
+        const orders = await Orders.find().sort({ orderDate: -1 });
+        res.json(orders);
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Failed to fetch orders.' });
+    }
+});
+
 app.post('/api/orders', async (req, res) => {
     try {
         const order = new Orders(req.body);
@@ -114,6 +126,53 @@ app.post('/api/orders', async (req, res) => {
         res.json({ success: true, message: 'Order placed successfully!' });
     } catch (error) {
         res.status(500).json({ success: false, message: 'Ordering failed.' });
+    }
+});
+
+app.patch('/api/orders/:id', async (req, res) => {
+    try {
+        const { status } = req.body;
+        await Orders.findByIdAndUpdate(req.params.id, { status });
+        res.json({ success: true, message: 'Order updated!' });
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Update failed.' });
+    }
+});
+
+app.delete('/api/orders/:id', async (req, res) => {
+    try {
+        await Orders.findByIdAndDelete(req.params.id);
+        res.json({ success: true, message: 'Order deleted!' });
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Deletion failed.' });
+    }
+});
+
+// Menu Management API
+app.post('/api/menu', (req, res) => {
+    try {
+        const { name, price, image } = req.body;
+        const filePath = path.join(__dirname, 'Cart', 'product.json');
+        
+        fs.readFile(filePath, 'utf8', (err, data) => {
+            if (err) return res.status(500).json({ success: false, message: 'Could not read menu' });
+            
+            let products = [];
+            if (data) products = JSON.parse(data);
+            
+            // Find max ID
+            const newId = products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1;
+            const newItem = { id: newId, name, price: Number(price), image };
+            
+            products.push(newItem);
+            
+            fs.writeFile(filePath, JSON.stringify(products, null, 4), 'utf8', (err) => {
+                if (err) return res.status(500).json({ success: false, message: 'Could not save menu item' });
+                res.json({ success: true, message: 'Food item added to cart system!', item: newItem });
+            });
+        });
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Server error' });
     }
 });
 
