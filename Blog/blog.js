@@ -1,4 +1,35 @@
-$(document).ready(function () {
+$(document).ready(async function () {
+    // Fetch Dynamic Backend Blogs
+    try {
+        const response = await fetch('/api/blogs');
+        const blogs = await response.json();
+        const container = $('#post-container');
+
+        blogs.forEach(blog => {
+            const dateStr = new Date(blog.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+            const catLower = blog.category.toLowerCase();
+            
+            const html = `
+            <div class="post-box ${catLower}">
+                <img src="${blog.image}" alt="${blog.title}" class="post-img" style="object-fit:cover; height:200px; width:100%;">
+                <h2 class="category">${blog.category}</h2>
+                <a href="#" class="post-title" onclick="alert('Full post view coming soon!')">
+                    ${blog.title}
+                </a>
+                <span class="post-date">${dateStr}</span>
+                <p class="post-discription">${blog.description}</p>
+                <div class="profile">
+                    <img src="Img/Profile1.png" alt="${blog.author}" class="profile-img">
+                    <span class="profile-name">${blog.author}</span>
+                </div>
+            </div>`;
+            container.prepend(html);
+        });
+    } catch (e) {
+        console.error("Failed to fetch blogs:", e);
+    }
+
+    // Re-query post-boxes now that dynamic ones are injected
     const $postBoxes = $('.post-box');
     const $filterItems = $('.filter-item');
 
