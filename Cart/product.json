@@ -19,7 +19,7 @@
     },
     {
         "id": 4,
-        "name": "McCafé Frappe",
+        "name": "Caramel Frappe",
         "price": 420,
         "image": "./Images/BG4.png"
     },
@@ -31,19 +31,19 @@
     },
     {
         "id": 6,
-        "name": "McDonald's French Fries",
+        "name": "Classic French Fries",
         "price": 120,
         "image": "./Images/BG6.png"
     },
     {
         "id": 7,
-        "name": "McCafé Iced Coffee",
+        "name": "Premium Iced Coffee",
         "price": 120,
         "image": "./Images/BG7.png"
     },
     {
         "id": 8,
-        "name": "McDonald's Spicy Veggie Pocket / Pie",
+        "name": "Spicy Veggie Pocket/Pie",
         "price": 120,
         "image": "./Images/BG8.png"
     }
