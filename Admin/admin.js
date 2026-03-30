@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchOrders();
+    fetchMenuItems();
     // Refresh orders every 2 seconds for real-time experience
     setInterval(fetchOrders, 2000);
 });
@@ -140,6 +141,7 @@ async function addMenuItem(event) {
         if (result.success) {
             showToast('Food Item Added Successfully! 🍔');
             document.getElementById('addMenuForm').reset();
+            fetchMenuItems(); // Refresh table dynamically
         } else {
             showToast(result.message || 'Error adding item ❌');
         }
@@ -149,5 +151,95 @@ async function addMenuItem(event) {
     } finally {
         btn.innerText = "Add Food +";
         btn.disabled = false;
+    }
+}
+
+async function addBlogPost(event) {
+    event.preventDefault();
+
+    const title = document.getElementById('blogTitle').value;
+    const category = document.getElementById('blogCategory').value;
+    const image = document.getElementById('blogImage').value;
+    const description = document.getElementById('blogDesc').value;
+    const content = document.getElementById('blogContent').value;
+
+    const btn = document.querySelector('#addBlogForm button[type="submit"]');
+    btn.innerText = "Publishing...";
+    btn.disabled = true;
+
+    try {
+        const response = await fetch('/api/blogs', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ title, category, image, description, content })
+        });
+        const result = await response.json();
+
+        if (result.success) {
+            showToast('Blog Post Published! 📝');
+            document.getElementById('addBlogForm').reset();
+        } else {
+            showToast(result.message || 'Error publishing blog ❌');
+        }
+    } catch (error) {
+        console.error('Error adding blog:', error);
+        showToast('Server error ❌');
+    } finally {
+        btn.innerText = "Publish Post +";
+        btn.disabled = false;
+    }
+}
+
+async function fetchMenuItems() {
+    try {
+        const response = await fetch('/api/menu');
+        const items = await response.json();
+        renderMenuItems(items);
+    } catch (error) {
+        console.error('Error fetching menu:', error);
+    }
+}
+
+function renderMenuItems(items) {
+    const tbody = document.getElementById('menu-items-body');
+    if (!tbody) return;
+    
+    tbody.innerHTML = '';
+    
+    if (items.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--text-muted);">No items in menu.</td></tr>`;
+        return;
+    }
+
+    items.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td><img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;"></td>
+            <td><strong>${item.name}</strong></td>
+            <td>₹${item.price}</td>
+            <td style="text-align: right;">
+                <button class="action-btn delete-btn" onclick="deleteMenuItem(${item.id})" title="Remove Item"><i class="ri-delete-bin-line"></i></button>
+            </td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+async function deleteMenuItem(id) {
+    if (!confirm('Are you sure you want to remove this item from the Cart system?')) return;
+
+    try {
+        const response = await fetch(`/api/menu/${id}`, { method: 'DELETE' });
+        const result = await response.json();
+
+        if (result.success) {
+            showToast('Food Item Removed! 🗑️');
+            fetchMenuItems(); // Refresh DOM exactly
+        } else {
+            showToast(result.message || 'Error removing item ❌');
+        }
+    } catch (error) {
+        console.error('Error deleting item:', error);
+        showToast('Server error ❌');
     }
 }
