@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Connecting MongoDB
-mongoose.connect('mongodb://localhost:27017/burger_house', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/burger_house');
 const db = mongoose.connection;
 db.on('error', (error) => console.error('MongoDB connection error:', error));
 db.once('open', () => console.log('MongoDB Connection Successful'));

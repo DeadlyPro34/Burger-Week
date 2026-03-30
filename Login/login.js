@@ -52,7 +52,7 @@ async function handleAuth() {
         }
 
         try {
-            const res = await fetch('/api/register', {
+            const res = await fetch('https://burger-week.onrender.com/api/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, password })
@@ -71,7 +71,7 @@ async function handleAuth() {
     } else {
         // Login Mode
         try {
-            const res = await fetch('/api/login', {
+            const res = await fetch('https://burger-week.onrender.com/api/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })

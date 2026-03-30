@@ -1,7 +1,7 @@
 $(document).ready(async function () {
     // Fetch Dynamic Backend Blogs
     try {
-        const response = await fetch('/api/blogs');
+        const response = await fetch('https://burger-week.onrender.com/api/blogs');
         const blogs = await response.json();
         const container = $('#post-container');
 

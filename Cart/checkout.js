@@ -111,7 +111,7 @@ function validateCheckout() {
                 paymentId: response.razorpay_payment_id
             };
 
-            fetch('/api/orders', {
+            fetch('https://burger-week.onrender.com/api/orders', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(orderData)

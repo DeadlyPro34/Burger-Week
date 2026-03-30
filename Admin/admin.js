@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function fetchOrders() {
     try {
-        const response = await fetch('/api/orders');
+        const response = await fetch('https://burger-week.onrender.com/api/orders');
         const orders = await response.json();
         
         if (Array.isArray(orders)) {
@@ -66,7 +66,7 @@ function updateStats(orders) {
 
 async function updateStatus(id, newStatus) {
     try {
-        const response = await fetch(`/api/orders/${id}`, {
+        const response = await fetch(`https://burger-week.onrender.com/api/orders/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ status: newStatus })
@@ -89,7 +89,7 @@ async function deleteOrder(id) {
     if (!confirm('Are you sure you want to delete this order permanently?')) return;
 
     try {
-        const response = await fetch(`/api/orders/${id}`, {
+        const response = await fetch(`https://burger-week.onrender.com/api/orders/${id}`, {
             method: 'DELETE'
         });
         const result = await response.json();
@@ -132,7 +132,7 @@ async function addMenuItem(event) {
     btn.disabled = true;
 
     try {
-        const response = await fetch('/api/menu', {
+        const response = await fetch('https://burger-week.onrender.com/api/menu', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, price, image })
@@ -169,7 +169,7 @@ async function addBlogPost(event) {
     btn.disabled = true;
 
     try {
-        const response = await fetch('/api/blogs', {
+        const response = await fetch('https://burger-week.onrender.com/api/blogs', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ title, category, image, description, content })
@@ -193,7 +193,7 @@ async function addBlogPost(event) {
 
 async function fetchMenuItems() {
     try {
-        const response = await fetch('/api/menu');
+        const response = await fetch('https://burger-week.onrender.com/api/menu');
         const items = await response.json();
         renderMenuItems(items);
     } catch (error) {
@@ -230,7 +230,7 @@ async function deleteMenuItem(id) {
     if (!confirm('Are you sure you want to remove this item from the Cart system?')) return;
 
     try {
-        const response = await fetch(`/api/menu/${id}`, { method: 'DELETE' });
+        const response = await fetch(`https://burger-week.onrender.com/api/menu/${id}`, { method: 'DELETE' });
         const result = await response.json();
 
         if (result.success) {
