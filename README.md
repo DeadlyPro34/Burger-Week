@@ -13,6 +13,7 @@
 -   **📽️ Dynamic Hero Experience**: Immersive video background with mouse-parallax animations for interactive burger elements.
 -   **🔐 Secure Authentication**: Full user registration and login system using **JWT** (JSON Web Tokens) and **bcrypt** for password hashing.
 -   **🛒 Real-time Ordering**: Seamless menu browsing with a functional shopping cart and order persistence natively through **product.json** mapping.
+-   **💳 Secure Payment Gateway**: Bank-grade checkout flow natively integrating **Razorpay** modal SDK capable of handling UPI, NetBanking, and credit validation seamlessly saving internal `Txn:` IDs automatically.
 -   **⚙️ Kitchen Admin Dashboard**: A premium, secure control panel for staff to manage orders via live data streaming and direct database manipulation.
 -   **🍔 Dynamic Menu Management**: Complete CRUD capability directly through the Admin Portal, automatically mapping items directly to the live User Cart without touching code.
 -   **📝 MongoDB Blog Engine**: Fully integrated dynamic blogging system allowing staff to publish rich-text articles directly to the live `Blog` component.
@@ -103,7 +104,7 @@ Burger Week/
 -   [x] **Admin Dashboard**: Real-time order management for kitchen staff.
 -   [x] **Dynamic Inventory**: Live Cart item creation and deletion.
 -   [x] **Blog CMS**: Integrated publishing system.
--   [ ] **Payment Integration**: Secure checkout with Stripe or Razorpay.
+-   [x] **Payment Integration**: Secure checkout with Razorpay SDK integration.
 -   [ ] **Email Notifications**: Automated order confirmation emails.
 -   [ ] **Search & Filters**: Advanced dish search and dietary filtering.
 
