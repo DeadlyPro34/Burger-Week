@@ -5,12 +5,14 @@ const fs = require('fs');
 const bcrypt = require('bcryptjs'); // Will be available after user installs
 const jwt = require('jsonwebtoken'); // Will be available after user installs
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 require('dotenv').config();
 
 const port = 3018; 
 const app = express();
 
 // Middleware
+app.use(cors()); // Critical for Android APK Backend communication
 app.use(express.static(__dirname));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
