@@ -46,11 +46,5 @@
         "name": "McDonald's Spicy Veggie Pocket / Pie",
         "price": 120,
         "image": "./Images/BG8.png"
-    },
-    {
-        "id": 9,
-        "name": "Tacos",
-        "price": 150,
-        "image": "https://www.bing.com/images/search?view=detailV2&ccid=ddach%2bT%2b&id=6EFDD6D62B19E2F7784907A74CFC255056E750F6&thid=OIP.ddach-T-U_SBgZ7_NPMRQQHaFB&mediaurl=https%3a%2f%2fmaxi.cdnartwhere.eu%2fwp-content%2fuploads%2frecipe%2f2021-10%2ftacos-a-la-mexicaine-scaled.jpg&exph=1738&expw=2560&q=Tacos&FORM=IRPRST&ck=B4C36F28DE0E42D10A38EFAC51CC3309&selectedIndex=1&itb=0"
     }
 ]
