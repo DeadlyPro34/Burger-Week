@@ -75,31 +75,70 @@ function validateCheckout() {
       return false;
     }
 
-    // SEND TO BACKEND
-    const orderData = {
-        customerName: name,
-        phone: phone,
-        address: address,
-        city: city,
-        items: listCart.filter(item => item !== null),
-        totalAmount: document.querySelector('.totalPrice').innerText.replace('Rs', '')
+    // RAZORPAY PAYMENT INTEGRATION
+    const totalAmountRaw = document.querySelector('.totalPrice').innerText.replace('Rs', '').trim();
+    if (parseInt(totalAmountRaw) <= 0 || isNaN(parseInt(totalAmountRaw))) {
+        alert("Your cart is empty!");
+        return false;
+    }
+
+    const amountInPaise = parseInt(totalAmountRaw) * 100;
+
+    var options = {
+        "key": "rzp_test_SXarYqgJi0IFtw",
+        "amount": amountInPaise.toString(),
+        "currency": "INR",
+        "name": "Burger House",
+        "description": "Secure Checkout",
+        "image": "../Image/burger.png",
+        "handler": function (response) {
+            // Once payment succeeds via Razorpay window, proceed to hit our MongoDB Server!
+            const orderData = {
+                customerName: name,
+                phone: phone,
+                address: address,
+                city: city,
+                items: listCart.filter(item => item !== null),
+                totalAmount: totalAmountRaw,
+                paymentId: response.razorpay_payment_id
+            };
+
+            fetch('/api/orders', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(orderData)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.success){
+                    alert('Payment Successful & Order Placed! Trxn ID: ' + response.razorpay_payment_id);
+                    localStorage.removeItem('listCart');
+                    window.location.href = '../index.htm';
+                } else {
+                    alert('Something went wrong contacting the server.');
+                }
+            });
+        },
+        "prefill": {
+            "name": name,
+            "contact": phone
+        },
+        "theme": {
+            "color": "#ff9718"
+        }
     };
 
-    fetch('/api/orders', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(orderData)
-    })
-    .then(res => res.json())
-    .then(data => {
-        if(data.success){
-            alert('Order Placed Successfully! We will contact you soon.');
-            localStorage.removeItem('listCart');
-            window.location.href = '../index.htm';
-        } else {
-            alert('Something went wrong. Please try again.');
-        }
-    });
+    if(typeof Razorpay === "undefined") {
+        alert("Secure Payment Gateway failed to load. Please check connection.");
+        return false;
+    }
 
-    return false; // Prevent default form submission
+    var rzp1 = new Razorpay(options);
+    rzp1.on('payment.failed', function (response){
+        alert("Payment Failed! Reason: " + response.error.description);
+    });
+    // Open the Razorpay Payment Modal
+    rzp1.open();
+
+    return false; // Prevent form from doing a real HTML submit!
 }
