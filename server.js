@@ -47,6 +47,18 @@ const orderSchema = new mongoose.Schema({
 });
 const Orders = mongoose.model('orders', orderSchema);
 
+// BLOG SCHEMA
+const blogSchema = new mongoose.Schema({
+    title: { type: String, required: true },
+    category: { type: String, required: true },
+    image: { type: String, required: true },
+    author: { type: String, default: 'Admin' },
+    date: { type: Date, default: Date.now },
+    description: { type: String, required: true },
+    content: { type: String, required: true }
+});
+const Blogs = mongoose.model('blogs', blogSchema);
+
 // CONTACT/REVIEW SCHEMA
 const inquirySchema = new mongoose.Schema({
     uname: String,
@@ -148,7 +160,44 @@ app.delete('/api/orders/:id', async (req, res) => {
     }
 });
 
+// Blog APIs
+app.get('/api/blogs', async (req, res) => {
+    try {
+        const blogs = await Blogs.find().sort({ date: -1 });
+        res.json(blogs);
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Failed to fetch blogs.' });
+    }
+});
+
+app.post('/api/blogs', async (req, res) => {
+    try {
+        const blog = new Blogs(req.body);
+        await blog.save();
+        res.json({ success: true, message: 'Blog created successfully!', blog });
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Failed to create blog.' });
+    }
+});
+
+app.delete('/api/blogs/:id', async (req, res) => {
+    try {
+        await Blogs.findByIdAndDelete(req.params.id);
+        res.json({ success: true, message: 'Blog deleted!' });
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Failed to delete blog.' });
+    }
+});
+
 // Menu Management API
+app.get('/api/menu', (req, res) => {
+    const filePath = path.join(__dirname, 'Cart', 'product.json');
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) return res.status(500).json({ success: false, message: 'Could not fetch menu.' });
+        res.json(data ? JSON.parse(data) : []);
+    });
+});
+
 app.post('/api/menu', (req, res) => {
     try {
         const { name, price, image } = req.body;
@@ -169,6 +218,33 @@ app.post('/api/menu', (req, res) => {
             fs.writeFile(filePath, JSON.stringify(products, null, 4), 'utf8', (err) => {
                 if (err) return res.status(500).json({ success: false, message: 'Could not save menu item' });
                 res.json({ success: true, message: 'Food item added to cart system!', item: newItem });
+            });
+        });
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+});
+
+app.delete('/api/menu/:id', (req, res) => {
+    try {
+        const id = parseInt(req.params.id);
+        const filePath = path.join(__dirname, 'Cart', 'product.json');
+        
+        fs.readFile(filePath, 'utf8', (err, data) => {
+            if (err) return res.status(500).json({ success: false, message: 'Could not read menu' });
+            
+            let products = data ? JSON.parse(data) : [];
+            const initialLength = products.length;
+            
+            products = products.filter(p => p.id !== id);
+            
+            if (products.length === initialLength) {
+                return res.status(404).json({ success: false, message: 'Item not found' });
+            }
+            
+            fs.writeFile(filePath, JSON.stringify(products, null, 4), 'utf8', (err) => {
+                if (err) return res.status(500).json({ success: false, message: 'Could not update menu' });
+                res.json({ success: true, message: 'Food item removed successfully!' });
             });
         });
     } catch (error) {
