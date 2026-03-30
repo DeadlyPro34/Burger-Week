@@ -121,7 +121,7 @@ function validateCheckout() {
                 if(data.success){
                     alert('Payment Successful & Order Placed! Trxn ID: ' + response.razorpay_payment_id);
                     localStorage.removeItem('listCart');
-                    window.location.href = '../index.htm';
+                    window.location.href = '../index.html';
                 } else {
                     alert('Something went wrong contacting the server.');
                 }

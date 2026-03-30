@@ -91,7 +91,7 @@ Burger Week/
 ├── 📁 Cart/          # Shopping cart logic and JSON Datastore
 ├── 📁 Image/         # Optimized assets and videos
 ├── 📁 Login/         # Authentication pages
-├── index.htm        # Main entry point (Frontend)
+├── index.html       # Main entry point (Frontend)
 ├── style.css        # Global design system
 ├── script.js        # Client-side interactivity
 ├── server.js        # Express backend & DB connection

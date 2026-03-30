@@ -74,10 +74,10 @@ const Inquiries = mongoose.model('inquiries', inquirySchema);
 
 // --- ROUTES ---
 
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.htm')));
-app.get('/index', (req, res) => res.sendFile(path.join(__dirname, 'index.htm')));
-app.get('/login', (req, res) => res.sendFile(path.join(__dirname, 'Login/login.htm')));
-app.get(['/admin', '/admin/'], (req, res) => res.sendFile(path.join(__dirname, 'Admin/admin.htm')));
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+app.get('/index', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+app.get('/login', (req, res) => res.sendFile(path.join(__dirname, 'Login/login.html')));
+app.get(['/admin', '/admin/'], (req, res) => res.sendFile(path.join(__dirname, 'Admin/admin.html')));
 
 // Handle Contact Form submissions
 app.post('/post', async (req, res) => {
