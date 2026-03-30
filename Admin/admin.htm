@@ -62,17 +62,54 @@
                 </div>
             </section>
 
-            <!-- New Menu Item Form -->
+            <!-- Menu Management System -->
             <section class="order-list" style="margin-top: 3rem;">
                 <div class="list-header" style="margin-bottom: 1.5rem;">
-                    <h2>🍕 Add New Menu Item</h2>
+                    <h2>🍕 Manage Cart Items</h2>
                 </div>
-                <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">Items added here will be automatically sent to the Cart system for users to purchase.</p>
-                <form id="addMenuForm" onsubmit="addMenuItem(event)" style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <input type="text" id="menuName" placeholder="Food Name (e.g. Double Cheese Burger)" required style="flex: 2; padding: 14px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--glass-bg); color: var(--text-white); font-size: 1rem; outline: none;">
+                <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">Add new items to the storefront, or remove existing ones.</p>
+                <form id="addMenuForm" onsubmit="addMenuItem(event)" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                    <input type="text" id="menuName" placeholder="Food Name (e.g. Double Burger)" required style="flex: 2; padding: 14px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--glass-bg); color: var(--text-white); font-size: 1rem; outline: none;">
                     <input type="number" id="menuPrice" placeholder="Price (₹)" required style="flex: 1; padding: 14px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--glass-bg); color: var(--text-white); font-size: 1rem; outline: none;">
                     <input type="text" id="menuImage" placeholder="Image URL (e.g. ./Images/BG1.png)" required style="flex: 2; padding: 14px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--glass-bg); color: var(--text-white); font-size: 1rem; outline: none;">
                     <button type="submit" class="refresh-btn" style="background: var(--primary-color); color: #000; padding: 0 24px; font-weight: 800;">Add Food +</button>
+                </form>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item Image</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th style="text-align: right;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="menu-items-body">
+                            <!-- Menu Items inserted here dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- New Blog Post Form -->
+            <section class="order-list" style="margin-top: 3rem;">
+                <div class="list-header" style="margin-bottom: 1.5rem;">
+                    <h2>📝 Create Blog Post</h2>
+                </div>
+                <form id="addBlogForm" onsubmit="addBlogPost(event)" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div style="display: flex; gap: 1rem;">
+                        <input type="text" id="blogTitle" placeholder="Blog Title" required style="flex: 2; padding: 14px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--glass-bg); color: var(--text-white); font-size: 1rem; outline: none;">
+                        <select id="blogCategory" required style="flex: 1; padding: 14px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--glass-bg); color: var(--text-white); font-size: 1rem; outline: none; appearance: auto;">
+                            <option style="background: var(--card-bg)" value="News">News</option>
+                            <option style="background: var(--card-bg)" value="Recipes">Recipes</option>
+                            <option style="background: var(--card-bg)" value="Events">Events</option>
+                        </select>
+                        <input type="text" id="blogImage" placeholder="Cover Image URL (e.g. ./Img/post1.jpg)" required style="flex: 2; padding: 14px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--glass-bg); color: var(--text-white); font-size: 1rem; outline: none;">
+                    </div>
+                    <textarea id="blogDesc" placeholder="Short Description..." rows="2" required style="padding: 14px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--glass-bg); color: var(--text-white); font-size: 1rem; outline: none; resize: vertical;"></textarea>
+                    <textarea id="blogContent" placeholder="Full Blog Content..." rows="5" required style="padding: 14px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--glass-bg); color: var(--text-white); font-size: 1rem; outline: none; resize: vertical;"></textarea>
+                    <button type="submit" class="refresh-btn" style="background: var(--primary-color); color: #000; padding: 14px 24px; font-weight: 800; width: fit-content; align-self: flex-end;">Publish Post +</button>
                 </form>
             </section>
         </main>
