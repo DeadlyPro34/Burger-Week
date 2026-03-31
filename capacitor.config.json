@@ -1,5 +1,9 @@
 {
   "appId": "com.burgerhouse.app",
   "appName": "Burger Week",
-  "webDir": "www"
+  "webDir": "www",
+  "server": {
+    "url": "https://burger-week.onrender.com",
+    "cleartext": true
+  }
 }
