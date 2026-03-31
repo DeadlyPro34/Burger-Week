@@ -104,47 +104,71 @@
 
 ---
 
-## 📱 Android APK
+## 📱 Android APK & Installation
 
-The app is built with **Capacitor** and configured to load live from the Render server:
+The native Android app is built using **Capacitor** and Android Studio. The application is configured with a live server URL, meaning the installed app dynamically pulls the newest updates directly from the Render server — you **never need to manually rebuild the APK** when changing HTML/JS!
 
-```json
-{
-  "server": {
-    "url": "https://burger-week.onrender.com"
-  }
-}
-```
+### Where is the APK File?
+Upon clicking `Build -> Build APK(s)` in Android Studio, the compiled installer is generated here:
+`android/app/build/outputs/apk/debug/app-debug.apk`
 
-This means any updates pushed to GitHub are **automatically live on the Android app** — no APK rebuild needed!
-
-To rebuild the APK after config changes:
-```bash
-npx cap sync
-npx cap open android
-# Then: Build → Build APK(s) in Android Studio
-```
+### How to Install on Your Phone:
+1. Connect your Android phone to your PC via a USB cable.
+2. Locate `app-debug.apk` inside your `Burger Week` project folder (path above).
+3. Copy the file and paste it into your phone's `Downloads` folder.
+4. On your phone, open the **Files** app, navigate to Downloads, and tap `app-debug.apk`.
+5. If prompted, click **Settings** and allow "Install from unknown sources."
+6. Tap **Install** and then **Open**!
 
 ---
 
-## 📂 Project Structure
+## 📂 Exhaustive Project Structure
 
 ```text
 Burger Week/
-├── 📁 Admin/              # Secure Kitchen Dashboard & Menu management
-├── 📁 Blog/               # Dynamic MongoDB-driven Blog layouts
-├── 📁 Cart/               # Shopping cart, checkout, product.json
-├── 📁 Image/              # Optimized image assets and videos
-├── 📁 Login/              # Authentication pages
-├── 📁 android/            # Capacitor Android project
-├── 📁 www/                # Capacitor web build output
-├── index.html             # Main entry point
-├── style.css              # Global design system
-├── script.js              # Client-side interactivity
-├── server.js              # Express backend & DB connection
-├── capacitor.config.json  # Capacitor + Render server config
-├── package.json           # Project metadata & dependencies
-└── .env                   # Sensitive configuration (not committed)
+├── 📁 Admin/                  # Secure Kitchen Dashboard System
+│   ├── admin.css              # Styling for the admin panel
+│   ├── admin.html             # UI for viewing orders and managing the DB
+│   └── admin.js               # Logic for fetching API orders & adding food
+├── 📁 Blog/                   # Dynamic Article System
+│   ├── Blog.css               # Blog page styling
+│   ├── Blog.html              # Blog reading interface
+│   └── Blog.js                # API hooks to fetch MongoDB articles
+├── 📁 Cart/                   # Shopping Cart & Checkout Engine
+│   ├── cart.css               # Unified styling for cart interfaces
+│   ├── cart.html              # Main shopping menu with Swiper & filters
+│   ├── cart.js                # Shopping cart logic (add/remove, local storage)
+│   ├── checkout.js            # Payment summary logic
+│   └── product.json           # Cloud-synced food inventory mapping
+├── 📁 Image/                  # Static Media Library
+│   ├── BG1.png -> BG3.png     # Application background assets
+│   ├── burgerplate.png        # Promo image mapping
+│   ├── cart.png               # Small favicon asset
+│   ├── Classic Coffee...png   # Menu image
+│   ├── Crispy veggie...png    # Menu image
+│   ├── Fries (Large).png      # Menu image
+│   ├── Iced Coffee...png      # Menu image
+│   ├── Veg Pizza McPuff.png   # Menu image
+│   ├── IMG-1.png -> IMG-3.png # Core design layout assets
+│   ├── video.mp4              # Dynamic hero mouse-parallax background
+│   └── video2.mp4             # Alternative active background
+├── 📁 Login/                  # Authentication Module
+│   ├── login.css              # Login UI styling
+│   ├── login.html             # Login/registration UI overlay
+│   └── login.js               # Registration & JWT backend hooks
+├── 📁 android/                # Capacitor Android Native Wrapper
+│   └── 📁 app/build/outputs/apk/debug/
+│       └── app-debug.apk      # 🔥 The Final Compiled Android Installer
+├── 📁 www/                    # Capacitor Cached Build Files
+├── index.html                 # The Homepage & Hero entry point
+├── style.css                  # Global website typography and layout CSS
+├── script.js                  # Global navbar & interactive component logic
+├── server.js                  # Node.js backend & MongoDB Atlas Router
+├── build-apk.js               # Utility script for syncing files to Capacitor
+├── capacitor.config.json      # Maps appId and points the APK to the live URL
+├── package.json               # Full NPM dependency & configuration list
+├── .gitignore                 # Excludes heavy node_modules & API keys
+└── README.md                  # This documentation file
 ```
 
 ---
