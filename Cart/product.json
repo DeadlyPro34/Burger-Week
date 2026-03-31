@@ -3,48 +3,48 @@
         "id": 1,
         "name": "Gourmet Bacon Cheeseburger",
         "price": 520,
-        "image": "./Images/BG1.png"
+        "image": "/Image/BG1.png"
     },
     {
         "id": 2,
         "name": "Classic Cheeseburger with Ketchup & Cheese",
         "price": 220,
-        "image": "./Images/BG2.png"
+        "image": "/Image/BG2.png"
     },
     {
         "id": 3,
         "name": "Gourmet Bacon Cheeseburger",
         "price": 250,
-        "image": "./Images/BG3.png"
+        "image": "/Image/BG3.png"
     },
     {
         "id": 4,
         "name": "Caramel Frappe",
         "price": 420,
-        "image": "./Images/BG4.png"
+        "image": "/Image/Classic Coffee Regular with Cinammon Spice.png"
     },
     {
         "id": 5,
         "name": "Chicken Sandwich Combo",
         "price": 120,
-        "image": "./Images/BG5.png"
+        "image": "/Image/burgerplate.png"
     },
     {
         "id": 6,
         "name": "Classic French Fries",
         "price": 120,
-        "image": "./Images/BG6.png"
+        "image": "/Image/Fries (Large).png"
     },
     {
         "id": 7,
         "name": "Premium Iced Coffee",
         "price": 120,
-        "image": "./Images/BG7.png"
+        "image": "/Image/Iced Coffee with Cinammon Spice.png"
     },
     {
         "id": 8,
         "name": "Spicy Veggie Pocket/Pie",
         "price": 120,
-        "image": "./Images/BG8.png"
+        "image": "/Image/Veg Pizza McPuff.png"
     }
 ]
