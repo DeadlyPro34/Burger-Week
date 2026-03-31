@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 require('dotenv').config();
 
-const port = 3018; 
+const port = process.env.PORT || 3018;
 const app = express();
 
 // Middleware
