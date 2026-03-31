@@ -25,7 +25,7 @@ function addCartToHTML(){
                 let newCart = document.createElement('div');
                 newCart.classList.add('item');
                 newCart.innerHTML = 
-                    `<img src="${product.image.toLowerCase().replace('./images/', 'images/')}">
+                    `<img src="${product.image}">
                     <div class="info">
                         <div class="name">${product.name}</div>
                         <div class="price">Rs${product.price}/1 product</div>

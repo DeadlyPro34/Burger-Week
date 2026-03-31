@@ -112,7 +112,7 @@ function renderListProduct(itemsToRender) {
             let newProduct = document.createElement('div');
             newProduct.classList.add('item');
             newProduct.innerHTML = 
-            `<img src="${product.image.toLowerCase().replace('./images/', 'images/')}" alt="">
+            `<img src="${product.image}" alt="">
             <h2>${product.name}</h2>
             <div class="price">Rs${product.price}</div>
             <button onclick="addCart(${product.id})">Add To Cart</button>`;
@@ -167,7 +167,7 @@ function addCartToHTML(){
                 let newCart = document.createElement('div');
                 newCart.classList.add('item');
                 newCart.innerHTML = 
-                    `<img src="${product.image.toLowerCase().replace('./images/', 'images/')}">
+                    `<img src="${product.image}">
                     <div class="content">
                         <div class="name">${product.name}</div>
                         <div class="price">Rs${product.price} / 1 product</div>
