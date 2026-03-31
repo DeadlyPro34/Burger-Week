@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="icon" href="Images/cart.png">
+    <link rel="stylesheet" href="cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+    <header>
+        <div class="nav container">
+            <!-- logo -->
+            <a href="../index.html" class="logo">Food<span>Cart</span></a>
+            <!-- Home button -->
+            <div class="iconCart">
+                <img src="Images/menu.png">
+                <div class="totalQuantity">0</div>
+            </div>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-text container">
+          <h2 class="home-title">Choose Your Fav. Burger's and Snacks😋</h2>
+          <span class="home-subtitle">A dish of fiery flavors stands steaming on the counter, hot and ready to serve, like a tempting promise of satisfaction waiting to be fulfilled.</span>
+        </div>
+      </section>
+    
+    <section>
+        <h1>New Items Added to Menu😋😋</h1>
+                <div class="menu-sum">
+                    <p>Hi! Here you can select the burger, coffee, & fries you like to have. Enjoy your meal!</p>
+                 </div>
+        <div class="content swiper">
+            <div class="slider-wrapper .hide-slider">
+                <div class="card-list swiper-wrapper">
+                    <div class="card-item swiper-slide">
+                        <img src="Images/Classic Coffee Regular with Cinammon Spice.png" alt="Coffee" class="img">
+                        <h2 class="order-name">Classic Coffee</h2>
+                        <button class="msg-button" onclick="addCart(4)">Add to cart</button>
+                    </div>
+                    <div class="card-item swiper-slide">
+                        <img src="Images/Fries (Large).png" alt="Fries" class="img">
+                        <h2 class="order-name">Large Fries</h2>
+                        <button class="msg-button" onclick="addCart(6)">Add to cart</button>
+                    </div>
+                    <div class="card-item swiper-slide">
+                        <img src="Images/Crispy veggie burger.png" alt="Veggie Burger" class="img">
+                        <h2 class="order-name">Veggie Burger</h2>
+                        <button class="msg-button" onclick="addCart(2)">Add to cart</button>
+                    </div>
+                    <div class="card-item swiper-slide">
+                        <img src="Images/Iced Coffee with Cinammon Spice.png" alt="Iced Coffee" class="img">
+                        <h2 class="order-name">Iced Coffee</h2>
+                        <button class="msg-button" onclick="addCart(7)">Add to cart</button>
+                    </div>
+                    <div class="card-item swiper-slide">
+                        <img src="Images/Veg Pizza McPuff.png" alt="Veggie Puff" class="img">
+                        <h2 class="order-name">Veggie Puff</h2>
+                        <button class="msg-button" onclick="addCart(8)">Add to cart</button>
+                    </div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-bullet"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <h1>Order Items Added to Menu😋😋</h1>
+                <div class="menu-sum">
+                    <p>Hi! Here you can select the burger, coffee, & fries you like to have. Enjoy your meal!</p>
+                 </div>
+                 
+        <div class="search-filter-container container" style="margin-bottom: 30px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; max-width: 800px;">
+            <input type="text" id="searchInput" placeholder="Search for burgers, fries, drinks..." onkeyup="filterMenu()" style="flex: 2; padding: 14px 20px; border-radius: 50px; border: 2px solid #ff9718; font-size: 1rem; outline: none; box-shadow: 0 4px 15px rgba(255, 151, 24, 0.1);">
+            <select id="dietaryFilter" onchange="filterMenu()" style="flex: 1; min-width: 150px; padding: 14px 20px; border-radius: 50px; border: 2px solid #ff9718; font-size: 1rem; outline: none; background: #fff; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 151, 24, 0.1);">
+                <option value="all">🍽️ All Items</option>
+                <option value="veg">🥬 Vegetarian</option>
+                <option value="nonveg">🍗 Non-Vegetarian</option>
+                <option value="beverage">☕ Beverages</option>
+            </select>
+        </div>
+
+        <div class="listProduct">
+            <div class="item">
+                <img src="Images/BG1.png" alt="Burger 1">
+                <h2>Product Name</h2>
+                <div class="price">Rs100</div>
+                <button>Add To Cart</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="cart open">
+        <h2>CART </h2>
+
+        <div class="listCart">
+            <div class="item">
+                <img src="BG1.png">
+                <div class="content">
+                    <div class="name">Premium Burger Combo</div>
+                    <div class="price">Rs550 / 1 product</div>
+                </div>
+                <div class="quantity">
+                    <button>-</button>
+                    <span class="value">3</span>
+                    <button>+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <div class="close">
+                CLOSE
+            </div>
+            <div class="checkout">
+                <a href="checkout.html">CHECKOUT</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer container">
+        <p>© Copyright Owner Burger House Since 2025</p>
+        <div class="social">
+          <a><i class="ri-facebook-circle-line"></i></a>
+          <a><i class="ri-twitter-x-line"></i></a>
+          <a><i class="ri-instagram-line"></i></a>
+          <a><i class="ri-whatsapp-line"></i></a>
+        </div>
+      </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>
